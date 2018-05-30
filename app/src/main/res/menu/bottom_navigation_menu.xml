@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_button"
+        android:title="Home"
+        android:visible="false"/>
+       <!-- android:icon="@drawable/ic_explore_black_24dp" -->
+
+    <item
+        android:id="@+id/search_button"
+        android:title="People"
+        android:visible="false"
+        />
+        <!--android:icon="@drawable/ic_supervisor_account_red_a100_24dp"-->
+
+
+    <item
+        android:id="@+id/auction_button"
+        android:title="Messages"
+        android:visible="false"/>
+        <!--android:icon="@drawable/ic_action_message"-->
+
+
+    <item
+        android:id="@+id/saves_button"
+        android:title="Notification"
+        android:visible="false"/>
+        <!--android:icon="@drawable/ic_action_notification"-->
+
+
+
+</menu>
