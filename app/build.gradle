@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 
     //Networking Libraries
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'

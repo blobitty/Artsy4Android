@@ -1,6 +1,5 @@
 package nyc.c4q.artsy4android.HomeSection;
 
-import android.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
