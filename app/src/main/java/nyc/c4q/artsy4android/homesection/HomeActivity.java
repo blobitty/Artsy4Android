@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.HomeSection;
+package nyc.c4q.artsy4android.homesection;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.HomeSection;
+package nyc.c4q.artsy4android.homesection;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import nyc.c4q.artsy4android.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ForYou_Fragment extends Fragment {
+public class Artist_Fragment extends Fragment {
 
 
-    public ForYou_Fragment() {
+    public Artist_Fragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class ForYou_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_for_you_, container, false);
+        return inflater.inflate(R.layout.fragment_artist_, container, false);
     }
 
 }

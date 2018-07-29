@@ -1,7 +1,4 @@
-package nyc.c4q.artsy4android.Network;
-
-import retrofit2.Call;
-import retrofit2.http.GET;
+package nyc.c4q.artsy4android.network;
 
 public interface Retrofit_Service {
 

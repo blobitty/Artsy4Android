@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.Network;
+package nyc.c4q.artsy4android.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
