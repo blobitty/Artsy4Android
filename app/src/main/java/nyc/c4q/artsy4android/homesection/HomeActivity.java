@@ -11,6 +11,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_home);
 
         Artist_Fragment artist_fragment = new Artist_Fragment();
