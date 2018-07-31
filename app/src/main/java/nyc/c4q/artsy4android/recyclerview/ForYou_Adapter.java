@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.model.ForYou;
 
 public class ForYou_Adapter extends RecyclerView.Adapter<ForYou_ViewHolder> {
     List<ForYou> forYouList;

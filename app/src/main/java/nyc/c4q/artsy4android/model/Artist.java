@@ -73,6 +73,9 @@ public class Artist {
         return links;
     }
 
+    /**
+     * Inner Class objects for JSON
+     */
     public class Links {
         Thumbnail thumbnail;
         Img image;
@@ -84,6 +87,10 @@ public class Artist {
         SimilarContemporaryArtists similar_contemporary_artists;
         Genes genes;
 
+        /**
+         *
+         * getters for outerclass
+         */
         public Genes getGenes() {
             return genes;
         }
@@ -118,6 +125,13 @@ public class Artist {
             return thumbnail;
         }
 
+        /**
+         * end of outer class getters
+         */
+
+        /**
+         * inner class, including getters and inner inner classes
+         */
         public class Thumbnail {
             String href;
             public String getHref() {
