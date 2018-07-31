@@ -15,7 +15,7 @@
         android:id="@+id/textView3"
         android:layout_width="308dp"
         android:layout_height="54dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="Lots By Artist You Follow"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="25dp"
