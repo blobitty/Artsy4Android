@@ -1,22 +1,33 @@
 package nyc.c4q.artsy4android.homesection;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 
 public class HomeActivity extends AppCompatActivity {
 
+    HomePagerFragment homePagerFragment = new HomePagerFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_home);
 
-        Artist_Fragment artist_fragment = new Artist_Fragment();
-        FragmentTransaction fm = getSupportFragmentManager().beginTransaction();
-                fm.replace(R.id.home_fContainer, artist_fragment).commit();
+        FragmentTransaction fTransaction = getSupportFragmentManager().beginTransaction();
+        fTransaction.replace(R.id.home_fContainer, homePagerFragment);
+        fTransaction.commit();
+
     }
 
 }

@@ -7,12 +7,10 @@
     android:layout_height="match_parent"
     tools:context="nyc.c4q.artsy4android.homesection.HomeActivity">
 
-<FrameLayout
-    android:id="@+id/home_fContainer"
-    android:layout_width="match_parent"
-    android:layout_height="450dp">
-</FrameLayout>
-    <!-- TODO: remove any nested views and utilize constraints -->
+    <FrameLayout
+        android:id="@+id/home_fContainer"
+        android:layout_width="match_parent"
+        android:layout_height="455dp" />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
