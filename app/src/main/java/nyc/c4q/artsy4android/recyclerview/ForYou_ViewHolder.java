@@ -8,8 +8,8 @@ public class ForYou_ViewHolder extends ViewHolder {
     public ForYou_ViewHolder(View itemView) {
         super(itemView);
     }
-
-    public void onBind(ForYou forYou) {
-
-    }
+    //TODO: Needs model  class
+//    public void onBind(ForYou forYou) {
+//
+//    }
 }

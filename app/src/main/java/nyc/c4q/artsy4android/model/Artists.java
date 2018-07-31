@@ -1,6 +1,6 @@
 package nyc.c4q.artsy4android.model;
 
-public class Artist {
+public class Artists {
 
     String id;
     String slug;
