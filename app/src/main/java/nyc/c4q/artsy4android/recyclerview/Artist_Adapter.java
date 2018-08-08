@@ -35,12 +35,13 @@ public class Artist_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {
 
     @Override
     public int getItemCount() {
-        try{
-            return artistsList.size();
-        }catch (NullPointerException e){
-            Log.d(TAG, "YOU HAVE AN EMPTY LIST: " + artistsList.size());
-            return artistsList.size();
-        }
+//        try{
+//            return artistsList.size();
+//        }catch (NullPointerException e){
+//            Log.d(TAG, "YOU HAVE AN EMPTY LIST: " + artistsList.size());
+//            return artistsList.size();
+//        }
         //TODO: connect to artsy api to populate list
+        return 1;
     }
 }

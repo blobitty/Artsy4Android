@@ -14,8 +14,8 @@ public interface Retrofit_Service {
 
 
         @POST("tokens/xapp_token")
-        Call<Token>createToken(@Body Token token);
+        Call<Token>createToken(@Query("client_id") String client_id, @Query("client_secret") String client_secret);
 
-        @GET("")
+        //@GET("")
 
 }
