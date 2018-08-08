@@ -13,6 +13,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.model.Artists;
+import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.recyclerview.Artist_Adapter;
 
 /**
@@ -22,6 +23,7 @@ public class Artist_Fragment extends Fragment {
     View rootView;
     RecyclerView artistFragmentRV;
     List <Artists> artists;
+    Retrofit_Instance retrofit_instance;
 
     public Artist_Fragment() {
         // Required empty public constructor
@@ -37,6 +39,10 @@ public class Artist_Fragment extends Fragment {
         setUpRV();
 
         return rootView;
+    }
+
+    public void getService(){
+
     }
 
     public void setUpRV(){
