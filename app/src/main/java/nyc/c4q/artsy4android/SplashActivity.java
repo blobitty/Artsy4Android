@@ -20,6 +20,8 @@ import static nyc.c4q.artsy4android.recyclerview.Artist_Adapter.TAG;
 
 public class SplashActivity extends AppCompatActivity {
 
+    //TODO: Create new models for the other fragments in the home page
+
     Retrofit_Instance retrofit_instance;
     Retrofit retrofit;
     Token tokenData;
