@@ -3,11 +3,14 @@ package nyc.c4q.artsy4android.network;
 import java.util.List;
 
 import nyc.c4q.artsy4android.model.Artists;
+import nyc.c4q.artsy4android.model.Fairs;
+import nyc.c4q.artsy4android.model.Search_Results;
 import nyc.c4q.artsy4android.model.Token;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Retrofit_Service {
@@ -22,4 +25,18 @@ public interface Retrofit_Service {
                                            @Query("sort") String sort,
                                            @Query("size") int size);
 
+        @GET("artists/{artist_id}")
+        Call<Artists> getArtist(@Path("artist_id") String artist_id);
+
+        @GET("fairs/{status}")
+        Call<List<Fairs>> getFairsList(@Query("status") String status);
+
+        @GET("fairs/{fair_id}")
+        Call<Fairs> getFair(@Path("fair_id") String fair_id);
+
+        @GET("search")
+        Call<List<Search_Results>> getSearchResults(@Query("q") String q,
+                                                    @Query("size") int size,
+                                                    @Query("type") String type);
 }
+
