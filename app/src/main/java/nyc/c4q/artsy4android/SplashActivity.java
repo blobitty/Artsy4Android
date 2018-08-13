@@ -40,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
+        //Makes a retrofit call to obtain xapp token and save xapp string to sharedpref
     public void getService(){
         retrofit_instance = new Retrofit_Instance();
         retrofit = retrofit_instance.getRetrofit();

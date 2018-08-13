@@ -1,7 +1,8 @@
 package nyc.c4q.artsy4android.model;
 
 public class Artists {
-
+    /**SLUG OR ID VALUE CAN BE USED AS RETROFIT @PARAM TO DIRECT TO INDIVIDUAL POINT
+     */
     String id;
     String slug;
     String created_at;
@@ -132,13 +133,14 @@ public class Artists {
         /**
          * inner class, including getters and inner inner classes
          */
-        public class Thumbnail {
+        private class Thumbnail {
             String href;
             public String getHref() {
                 return href;
             }
         }
-        public class Img {
+
+        private class Img {
             String href;
             boolean templated;
 
@@ -149,24 +151,28 @@ public class Artists {
                 return templated;
             }
         }
-        public class Self {
+
+        private class Self {
             String href;
             public String getHref() {
                 return href;
             }
         }
-        public class PermaLink {
+
+        private class PermaLink {
             String href;
             public String getHref() {
                 return href;
             }
         }
-        public class Artworks {
+
+        private class Artworks {
             String href;
             public String getHref() {
                 return href;
             }
         }
+
         private class PublishedArtworks {
             String href;
             public String getHref() {
@@ -180,6 +186,7 @@ public class Artists {
                 return href;
             }
         }
+
         private class SimilarContemporaryArtists {
             String href;
             public String getHref() {

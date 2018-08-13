@@ -7,8 +7,8 @@ import nyc.c4q.artsy4android.model.Fairs;
 import nyc.c4q.artsy4android.model.Search_Results;
 import nyc.c4q.artsy4android.model.Token;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -23,7 +23,8 @@ public interface Retrofit_Service {
         Call<List<Artists>> getArtistsList(@Query("similarity_type") String similarity_type,
                                            @Query("artworks") boolean artworks,
                                            @Query("sort") String sort,
-                                           @Query("size") int size);
+                                           @Query("size") int size,
+                                           @Header("X-Xapp-Token") String xappToken);
 
         @GET("artists/{artist_id}")
         Call<Artists> getArtist(@Path("artist_id") String artist_id);
