@@ -1,5 +1,9 @@
 package nyc.c4q.artsy4android.model;
 
+import java.util.List;
+
+import nyc.c4q.artsy4android.model.artworks.Artworks;
+
 public class Artists {
     /**SLUG OR ID VALUE CAN BE USED AS RETROFIT @PARAM TO DIRECT TO INDIVIDUAL POINT
      */
@@ -14,6 +18,7 @@ public class Artists {
     String birthday;
     String deathday;
     String hometown;
+    String nationality;
     String location;
     String[] image_versions = new String[4];
     Links links;
@@ -66,6 +71,10 @@ public class Artists {
         return location;
     }
 
+    public String getNationality() {
+        return nationality;
+    }
+
     public String[] getImage_versions() {
         return image_versions;
     }
@@ -82,7 +91,7 @@ public class Artists {
         Img image;
         Self self;
         PermaLink permaLink;
-        Artworks artworks;
+        List<Artworks> artworks;
         PublishedArtworks published_artworks;
         SimilarArtists similar_artists;
         SimilarContemporaryArtists similar_contemporary_artists;
@@ -106,7 +115,7 @@ public class Artists {
             return published_artworks;
         }
 
-        public Artworks getArtworks() {
+        public List<Artworks> getArtworks() {
             return artworks;
         }
 
@@ -133,14 +142,14 @@ public class Artists {
         /**
          * inner class, including getters and inner inner classes
          */
-        private class Thumbnail {
+        public class Thumbnail {
             String href;
             public String getHref() {
                 return href;
             }
         }
 
-        private class Img {
+        public class Img {
             String href;
             boolean templated;
 
@@ -152,49 +161,42 @@ public class Artists {
             }
         }
 
-        private class Self {
+        public class Self {
             String href;
             public String getHref() {
                 return href;
             }
         }
 
-        private class PermaLink {
+        public class PermaLink {
             String href;
             public String getHref() {
                 return href;
             }
         }
 
-        private class Artworks {
+        public class PublishedArtworks {
+            String href;
+            public String getHref() {
+                return href;
+            }
+            }
+
+        public class SimilarArtists {
             String href;
             public String getHref() {
                 return href;
             }
         }
 
-        private class PublishedArtworks {
-            String href;
-            public String getHref() {
-                return href;
-            }
-            }
-
-        private class SimilarArtists {
+        public class SimilarContemporaryArtists {
             String href;
             public String getHref() {
                 return href;
             }
         }
 
-        private class SimilarContemporaryArtists {
-            String href;
-            public String getHref() {
-                return href;
-            }
-        }
-
-        private class Genes {
+        public class Genes {
             String href;
 
             public String getHref() {

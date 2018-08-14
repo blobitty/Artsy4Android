@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.recyclerview;
+package nyc.c4q.artsy4android.view;
 
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.View;

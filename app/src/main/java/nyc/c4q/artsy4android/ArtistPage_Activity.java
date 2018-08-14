@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.artistpage;
+package nyc.c4q.artsy4android;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

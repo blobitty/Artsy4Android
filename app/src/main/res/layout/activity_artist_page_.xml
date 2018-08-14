@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".artistpage.ArtistPage_Activity">
+    tools:context=".ArtistPage_Activity">
 
 <!--TODO: add view pager for top tool bar with the three frags-->
     <View

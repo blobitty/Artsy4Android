@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import nyc.c4q.artsy4android.homesection.HomeActivity;
 import nyc.c4q.artsy4android.model.Token;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.network.Retrofit_Service;
@@ -16,7 +15,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-import static nyc.c4q.artsy4android.recyclerview.Artist_Adapter.TAG;
+import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -40,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-        //Makes a retrofit call to obtain xapp token and save xapp string to sharedpref
+        //Makes a retrofit call to obtain xapp token and save xapp string to sharedpreferences
     public void getService(){
         retrofit_instance = new Retrofit_Instance();
         retrofit = retrofit_instance.getRetrofit();

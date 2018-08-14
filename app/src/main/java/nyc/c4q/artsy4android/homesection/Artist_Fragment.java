@@ -3,6 +3,7 @@ package nyc.c4q.artsy4android.homesection;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
+import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.model.Artists;
 
 /**
@@ -44,10 +46,10 @@ public class Artist_Fragment extends Fragment {
 
 
     public void setUpRV(){
-//        Artist_Adapter artist_adapter = new Artist_Adapter(artists);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-//        artistFragmentRV.setAdapter(artist_adapter);
-//        artistFragmentRV.setLayoutManager(linearLayoutManager);
+        ArtistsList_Adapter artist_adapter = new ArtistsList_Adapter(artists);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        artistFragmentRV.setAdapter(artist_adapter);
+        artistFragmentRV.setLayoutManager(linearLayoutManager);
     }
 
 }

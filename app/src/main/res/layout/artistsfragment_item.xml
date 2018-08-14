@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/artist_profile"
+        android:id="@+id/artist_profile_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,22 +17,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/artist_title"
+        android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:text="artists"
-        app:layout_constraintStart_toEndOf="@id/artist_profile"
+        app:layout_constraintStart_toEndOf="@id/artist_profile_img"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:id="@+id/worksAdded_textView"
+        android:id="@+id/artistNationality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="works added"
+        android:text="nationality"
         android:layout_marginLeft="5dp"
-        app:layout_constraintStart_toEndOf="@id/artist_profile"
-        app:layout_constraintTop_toBottomOf="@id/artist_title"/>
+        app:layout_constraintStart_toEndOf="@id/artist_profile_img"
+        app:layout_constraintTop_toBottomOf="@id/artist_name"/>
 
     <ImageView
         android:id="@+id/artImageOne"
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toStartOf="@+id/artImageTwo"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist_profile"
+        app:layout_constraintTop_toBottomOf="@+id/artist_profile_img"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <ImageView
@@ -54,7 +54,7 @@
         android:layout_marginEnd="92dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist_profile"
+        app:layout_constraintTop_toBottomOf="@+id/artist_profile_img"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <View

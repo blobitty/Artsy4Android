@@ -6,6 +6,7 @@ import nyc.c4q.artsy4android.model.Artists;
 import nyc.c4q.artsy4android.model.Fairs;
 import nyc.c4q.artsy4android.model.Search_Results;
 import nyc.c4q.artsy4android.model.Token;
+import nyc.c4q.artsy4android.model.artworks.Artworks;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -39,5 +40,7 @@ public interface Retrofit_Service {
         Call<List<Search_Results>> getSearchResults(@Query("q") String q,
                                                     @Query("size") int size,
                                                     @Query("type") String type);
+        @GET("artworks/{id}")
+        Call<List<Artworks>> getArtworks(@Path("id") String id, @Header("X-Xapp-Token") String xappToken);
 }
 

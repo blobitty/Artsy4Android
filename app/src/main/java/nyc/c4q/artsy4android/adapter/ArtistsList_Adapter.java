@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.recyclerview;
+package nyc.c4q.artsy4android.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,12 +9,13 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.model.Artists;
+import nyc.c4q.artsy4android.view.Artist_ViewHolder;
 
-public class Artist_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {
+public class ArtistsList_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {
     List<Artists> artistsList;
     public static final String TAG = "HELP!";
 
-    public Artist_Adapter(List<Artists> artistsList){
+    public ArtistsList_Adapter(List<Artists> artistsList){
         this.artistsList = artistsList;
     }
 
@@ -34,13 +35,6 @@ public class Artist_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {
 
     @Override
     public int getItemCount() {
-//        try{
-//            return artistsList.size();
-//        }catch (NullPointerException e){
-//            Log.d(TAG, "YOU HAVE AN EMPTY LIST: " + artistsList.size());
-//            return artistsList.size();
-//        }
-        //TODO: connect to artsy api to populate list
-        return 1;
+        return artistsList.size();
     }
 }

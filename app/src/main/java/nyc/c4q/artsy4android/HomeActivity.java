@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.homesection;
+package nyc.c4q.artsy4android;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
+import nyc.c4q.artsy4android.homesection.HomePagerFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
