@@ -51,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     tokenData = response.body();
                     xappToken = tokenData.getToken();
-                    Log.d(TAG, "onResponse: " + xappToken);
+                    Log.d(TAG, "onResponse: XAPP= " + xappToken);
                     SharedPreferences.Editor editor = tokenSharedPrefs.edit();
                     editor.putString("xapptoken", xappToken);
                     editor.apply();

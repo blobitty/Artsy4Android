@@ -58,7 +58,7 @@ public class HomePagerFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new Artist_Fragment(), "ARTISTS");
+        adapter.addFragment(new Artists_Fragment(), "ARTISTS");
         adapter.addFragment(new ForYou_Fragment(), "FOR YOU");
         adapter.addFragment(new AuctionsFragment(), "AUCTIONS");
         viewPager.setAdapter(adapter);

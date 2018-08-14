@@ -8,10 +8,18 @@ package nyc.c4q.artsy4android.view;
 
         import com.squareup.picasso.Picasso;
 
+        import java.util.List;
+
         import de.hdodenhof.circleimageview.CircleImageView;
         import nyc.c4q.artsy4android.R;
         import nyc.c4q.artsy4android.model.Artists;
-        import nyc.c4q.artsy4android.model.artistslist.ArtistsList;
+        import nyc.c4q.artsy4android.model.artworks.Artworks;
+        import nyc.c4q.artsy4android.network.Retrofit_Instance;
+        import nyc.c4q.artsy4android.network.Retrofit_Service;
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import retrofit2.Response;
+        import retrofit2.Retrofit;
 
         import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
 
@@ -21,7 +29,11 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
     TextView artistNationality;
     ImageView artImageOne;
     ImageView artImageTwo;
+    Artworks artworks;
     String imageOne_URL, imageTwo_URL, artistImage_URL, artistID;
+    Retrofit_Instance retroInstance;
+    Retrofit retrofit;
+    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNDg3NjEzMywiaWF0IjoxNTM0MjcxMzMzLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3MzFmNjViYzczZTYwNTBmNjQ4MTEwIn0.dJxCO8epG7O6OlOmG-MvWWZS8vPxg6BlyNaSQq4nbc0";
 
 
 
@@ -35,41 +47,59 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
         artImageTwo = itemView.findViewById(R.id.artImageTwo);
     }
 
-    public void onBind(Artists artists) {
-        artistName.setText(artists.getName());
-        artistNationality.setText(artists.getNationality());
-        artistID = artists.getId();
+    public void onBind(Artists artistsList) {
+        artistName.setText(artistsList.getName());
+        artistNationality.setText(artistsList.getNationality());
+        artistID = artistsList.getId();
         //load and set itemView images
-        setImages(artists);
+        setImages(artistsList);
     }
 
     public void setImages(Artists artists){
         //load and set artist Image
-        if(!artists.getLinks().getThumbnail().getHref().isEmpty()){
-            artistImage_URL = artists.getLinks().getThumbnail().getHref();
+        if(!artists.get_links().getThumbnail().getHref().isEmpty()){
+            artistImage_URL = artists.get_links().getThumbnail().getHref();
 
             Picasso.get()
                     .load(artistImage_URL)
                     .into(artistImage);
-            Log.d(TAG, "onBind: " + artistImage_URL);
+            Log.d(TAG, "onBind Image One: " + artistImage_URL);
         }
         //load and set artworkOne
-        if(!artists.getLinks().getArtworks().isEmpty()){
-            imageOne_URL = artists.getLinks().getArtworks().get(0).get_links().getImage().getHref();
+        if(artists.get_links().getArtworks() != null){
+            imageOne_URL = artists.get_links().getArtworks().get_links().getImage().getHref();
 
             Picasso.get()
                     .load(imageOne_URL)
                     .into(artImageOne);
-            Log.d(TAG, "onBind: " + imageOne_URL);
+            Log.d(TAG, "onBind Image Two: " + imageOne_URL);
         }
         //load and set artWorkTwo
-        if (artists.getLinks().getArtworks().size() > 1){
-            imageTwo_URL = artists.getLinks().getArtworks().get(1).get_links().getImage().getHref();
-
+//        if (artists.get_links().getArtworks().size() > 1){
+            imageTwo_URL = artists.get_links().getArtworks().get_links().getImage().getHref();
             Picasso.get()
                     .load(imageTwo_URL)
                     .into(artImageTwo);
-        }
+    }
+
+    public void artworksAPI_Call(String artistID){
+        retroInstance = new Retrofit_Instance();
+        retrofit = retroInstance.getRetrofit();
+        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
+        Call<Artworks> getArtworks = retroService.getArtworks(artistID, xapptoken);
+        getArtworks.enqueue(new Callback<Artworks>() {
+            @Override
+            public void onResponse(Call<Artworks> call, Response<Artworks> response) {
+                artworks = response.body();
+                Log.i(TAG, "onResponse: " + artworks);
+            }
+
+            @Override
+            public void onFailure(Call<Artworks> call, Throwable t) {
+                t.printStackTrace();
+                Log.i(TAG, "onFailure: " + t.toString());
+            }
+        });
     }
 }
 

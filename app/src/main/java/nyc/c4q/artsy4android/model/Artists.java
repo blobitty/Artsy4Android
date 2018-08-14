@@ -21,7 +21,7 @@ public class Artists {
     String nationality;
     String location;
     String[] image_versions = new String[4];
-    Links links;
+    Links _links;
 
     public String getId() {
         return id;
@@ -79,8 +79,8 @@ public class Artists {
         return image_versions;
     }
 
-    public Links getLinks() {
-        return links;
+    public Links get_links() {
+        return _links;
     }
 
     /**
@@ -91,7 +91,7 @@ public class Artists {
         Img image;
         Self self;
         PermaLink permaLink;
-        List<Artworks> artworks;
+        Artworks artworks;
         PublishedArtworks published_artworks;
         SimilarArtists similar_artists;
         SimilarContemporaryArtists similar_contemporary_artists;
@@ -115,7 +115,7 @@ public class Artists {
             return published_artworks;
         }
 
-        public List<Artworks> getArtworks() {
+        public Artworks getArtworks() {
             return artworks;
         }
 
