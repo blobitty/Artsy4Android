@@ -17,6 +17,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.model.Artists;
 import nyc.c4q.artsy4android.model.artistslist.ArtistsList;
+import nyc.c4q.artsy4android.model.artworks.Artworks;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.network.Retrofit_Service;
 import retrofit2.Call;
@@ -86,9 +87,9 @@ public class Artists_Fragment extends Fragment {
                 Log.i(TAG, "onRawResponse: " + response.raw());
                 Log.i(TAG, "onCallRequest: " + call.request());
                 Log.i(TAG, "artistList Contents " + artistsListHolder.get_embedded().getArtists());
-                Log.i(TAG, "Links Contents " + artistsListHolder.get_embedded().getArtists().get(0).get_links().getThumbnail().getHref());
+                Log.i(TAG, "Artist Thumbnail Image " + artistsListHolder.get_embedded().getArtists().get(0).get_links().getThumbnail().getHref());
 
-               setUpRV();
+               //setUpRV();
             }
 
             @Override
@@ -97,7 +98,6 @@ public class Artists_Fragment extends Fragment {
                 t.printStackTrace();
             }
         });
-
     }
 
 }

@@ -45,6 +45,7 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
         artistNationality = itemView.findViewById(R.id.artistNationality);
         artImageOne = itemView.findViewById(R.id.artImageOne);
         artImageTwo = itemView.findViewById(R.id.artImageTwo);
+
     }
 
     public void onBind(Artists artistsList) {
@@ -65,41 +66,25 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
                     .into(artistImage);
             Log.d(TAG, "onBind Image One: " + artistImage_URL);
         }
-        //load and set artworkOne
-        if(artists.get_links().getArtworks() != null){
-            imageOne_URL = artists.get_links().getArtworks().get_links().getImage().getHref();
-
-            Picasso.get()
-                    .load(imageOne_URL)
-                    .into(artImageOne);
-            Log.d(TAG, "onBind Image Two: " + imageOne_URL);
-        }
-        //load and set artWorkTwo
+        /**
+         * Breakpoint for Bug
+         */
+//
+       //load and set artworkOne
+//        if(artists.get_links().getArtworks() != null){
+//            imageOne_URL = artists.get_links().getArtworks().get(0).get_links().getImage().getHref();
+//
+//            Picasso.get()
+//                    .load(imageOne_URL)
+//                    .into(artImageOne);
+//            Log.d(TAG, "onBind Image Two: " + imageOne_URL);
+//        }
+//        //load and set artWorkTwo
 //        if (artists.get_links().getArtworks().size() > 1){
-            imageTwo_URL = artists.get_links().getArtworks().get_links().getImage().getHref();
-            Picasso.get()
-                    .load(imageTwo_URL)
-                    .into(artImageTwo);
-    }
-
-    public void artworksAPI_Call(String artistID){
-        retroInstance = new Retrofit_Instance();
-        retrofit = retroInstance.getRetrofit();
-        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
-        Call<Artworks> getArtworks = retroService.getArtworks(artistID, xapptoken);
-        getArtworks.enqueue(new Callback<Artworks>() {
-            @Override
-            public void onResponse(Call<Artworks> call, Response<Artworks> response) {
-                artworks = response.body();
-                Log.i(TAG, "onResponse: " + artworks);
-            }
-
-            @Override
-            public void onFailure(Call<Artworks> call, Throwable t) {
-                t.printStackTrace();
-                Log.i(TAG, "onFailure: " + t.toString());
-            }
-        });
+//            imageTwo_URL = artists.get_links().getArtworks().get(0).get_links().getImage().getHref();
+//            Picasso.get()
+//                    .load(imageTwo_URL)
+//                    .into(artImageTwo);
     }
 }
 

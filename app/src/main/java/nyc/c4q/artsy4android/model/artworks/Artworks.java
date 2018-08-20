@@ -1,6 +1,6 @@
 package nyc.c4q.artsy4android.model.artworks;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Artworks {
 
@@ -32,7 +32,7 @@ public class Artworks {
     boolean can_share;
     String sale_message;
     boolean sold;
-    ArrayList<String> image_versions;
+    List<String> image_versions;
     Links _links;
 
 
@@ -115,7 +115,7 @@ public class Artworks {
         return sold;
     }
 
-    public ArrayList<String> getImage_versions() {
+    public List<String> getImage_versions() {
         return image_versions;
     }
 

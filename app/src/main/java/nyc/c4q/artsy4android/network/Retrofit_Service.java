@@ -43,5 +43,6 @@ public interface Retrofit_Service {
                                                     @Query("type") String type);
         @GET("artworks/{id}")
         Call<Artworks> getArtworks(@Path("id") String id, @Header("X-Xapp-Token") String xappToken);
+
 }
 

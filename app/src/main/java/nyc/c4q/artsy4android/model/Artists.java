@@ -5,7 +5,7 @@ import java.util.List;
 import nyc.c4q.artsy4android.model.artworks.Artworks;
 
 public class Artists {
-    /**SLUG OR ID VALUE CAN BE USED AS RETROFIT @PARAM TO DIRECT TO INDIVIDUAL POINT
+    /**SLUG OR ID VALUE CAN BE USED AS RETROFIT @PARAM TO DIRECT TO INDIVIDUAL ENDPOINT
      */
     String id;
     String slug;
@@ -91,7 +91,7 @@ public class Artists {
         Img image;
         Self self;
         PermaLink permaLink;
-        Artworks artworks;
+        List<Artworks> artworks;
         PublishedArtworks published_artworks;
         SimilarArtists similar_artists;
         SimilarContemporaryArtists similar_contemporary_artists;
@@ -115,7 +115,7 @@ public class Artists {
             return published_artworks;
         }
 
-        public Artworks getArtworks() {
+        public List<Artworks> getArtworks() {
             return artworks;
         }
 
