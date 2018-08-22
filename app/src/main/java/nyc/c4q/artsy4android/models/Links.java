@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.model.artworks;
+package nyc.c4q.artsy4android.models;
 
 public class Links {
     Thumbnail thumbnail;

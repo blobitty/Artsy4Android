@@ -1,6 +1,6 @@
-package nyc.c4q.artsy4android.model.artworks;
+package nyc.c4q.artsy4android.models;
 
-class Dimensions {
+class Artwork_Dimensions {
     In in;
     Cm cm;
 

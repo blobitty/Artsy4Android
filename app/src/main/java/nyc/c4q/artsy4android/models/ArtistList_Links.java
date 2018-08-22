@@ -1,6 +1,6 @@
-package nyc.c4q.artsy4android.model.artistslist;
+package nyc.c4q.artsy4android.models;
 
-public class Links {
+public class ArtistList_Links {
     Self self;
     Next next;
 

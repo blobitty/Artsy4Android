@@ -2,12 +2,12 @@ package nyc.c4q.artsy4android.network;
 
 import java.util.List;
 
-import nyc.c4q.artsy4android.model.Artists;
-import nyc.c4q.artsy4android.model.Fairs;
-import nyc.c4q.artsy4android.model.Search_Results;
-import nyc.c4q.artsy4android.model.Token;
-import nyc.c4q.artsy4android.model.artistslist.ArtistsList;
-import nyc.c4q.artsy4android.model.artworks.Artworks;
+import nyc.c4q.artsy4android.models.Artists;
+import nyc.c4q.artsy4android.models.Fairs;
+import nyc.c4q.artsy4android.models.Search_Results;
+import nyc.c4q.artsy4android.models.Token;
+import nyc.c4q.artsy4android.models.ArtistsList;
+import nyc.c4q.artsy4android.models.Artworks;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;

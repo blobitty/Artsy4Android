@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.model.artworks;
+package nyc.c4q.artsy4android.models;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class Artworks {
     String category;
     String medium;
     String date;
-    Dimensions dimensions;
+    Artwork_Dimensions dimensions;
     boolean published;
     String website;
     String signature;
@@ -156,7 +156,7 @@ public class Artworks {
         return date;
     }
 
-    public Dimensions getDimensions() {
+    public Artwork_Dimensions getDimensions() {
         return dimensions;
     }
 

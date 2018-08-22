@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.model.Artists;
-import nyc.c4q.artsy4android.model.artistslist.ArtistsList;
+import nyc.c4q.artsy4android.models.Artists;
 import nyc.c4q.artsy4android.view.Artist_ViewHolder;
 
 public class ArtistsList_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {

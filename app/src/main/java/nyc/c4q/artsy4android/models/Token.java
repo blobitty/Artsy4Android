@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.model;
+package nyc.c4q.artsy4android.models;
 
 public class Token {
 

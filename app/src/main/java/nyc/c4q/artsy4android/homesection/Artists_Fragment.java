@@ -15,9 +15,8 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
-import nyc.c4q.artsy4android.model.Artists;
-import nyc.c4q.artsy4android.model.artistslist.ArtistsList;
-import nyc.c4q.artsy4android.model.artworks.Artworks;
+import nyc.c4q.artsy4android.models.Artists;
+import nyc.c4q.artsy4android.models.ArtistsList;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.network.Retrofit_Service;
 import retrofit2.Call;
@@ -41,7 +40,7 @@ public class Artists_Fragment extends Fragment {
     Retrofit_Service retroService;
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
-    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNDg3NjEzMywiaWF0IjoxNTM0MjcxMzMzLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3MzFmNjViYzczZTYwNTBmNjQ4MTEwIn0.dJxCO8epG7O6OlOmG-MvWWZS8vPxg6BlyNaSQq4nbc0";
+    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTUxNTQyNCwiaWF0IjoxNTM0OTEwNjI0LCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3Y2UwYTBhNWNjY2UwYjk2MGMyZjlkIn0.l-EwcHHx8yblgIaYHtUx97qZd0ZOkQ1gFcFuT3ysKJI";
 
 
 
@@ -86,10 +85,10 @@ public class Artists_Fragment extends Fragment {
                 Log.i(TAG, "onResponse: " + artistsListHolder);
                 Log.i(TAG, "onRawResponse: " + response.raw());
                 Log.i(TAG, "onCallRequest: " + call.request());
-                Log.i(TAG, "artistList Contents " + artistsListHolder.get_embedded().getArtists());
+                Log.i(TAG, "artistList Contents " + artistsListHolder.get_embedded());
                 Log.i(TAG, "Artist Thumbnail Image " + artistsListHolder.get_embedded().getArtists().get(0).get_links().getThumbnail().getHref());
 
-               //setUpRV();
+               setUpRV();
             }
 
             @Override

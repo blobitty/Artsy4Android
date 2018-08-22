@@ -8,17 +8,11 @@ package nyc.c4q.artsy4android.view;
 
         import com.squareup.picasso.Picasso;
 
-        import java.util.List;
-
         import de.hdodenhof.circleimageview.CircleImageView;
         import nyc.c4q.artsy4android.R;
-        import nyc.c4q.artsy4android.model.Artists;
-        import nyc.c4q.artsy4android.model.artworks.Artworks;
+        import nyc.c4q.artsy4android.models.Artists;
+        import nyc.c4q.artsy4android.models.Artworks;
         import nyc.c4q.artsy4android.network.Retrofit_Instance;
-        import nyc.c4q.artsy4android.network.Retrofit_Service;
-        import retrofit2.Call;
-        import retrofit2.Callback;
-        import retrofit2.Response;
         import retrofit2.Retrofit;
 
         import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;

@@ -1,15 +1,15 @@
-package nyc.c4q.artsy4android.model.artistslist;
+package nyc.c4q.artsy4android.models;
 
 public class ArtistsList {
     String total_count;
-    Links _links;
+    ArtistList_Links _links;
     Embedded _embedded;
 
     public String getTotal_count() {
         return total_count;
     }
 
-    public Links get_links() {
+    public ArtistList_Links get_links() {
         return _links;
     }
 
