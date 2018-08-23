@@ -1,5 +1,7 @@
 package nyc.c4q.artsy4android.view;
 
+        import android.graphics.Typeface;
+        import android.os.Environment;
         import android.support.v7.widget.RecyclerView;
         import android.util.Log;
         import android.view.View;
@@ -7,6 +9,8 @@ package nyc.c4q.artsy4android.view;
         import android.widget.TextView;
 
         import com.squareup.picasso.Picasso;
+
+        import java.io.File;
 
         import de.hdodenhof.circleimageview.CircleImageView;
         import nyc.c4q.artsy4android.R;
@@ -39,6 +43,7 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
         artistNationality = itemView.findViewById(R.id.artistNationality);
         artImageOne = itemView.findViewById(R.id.artImageOne);
         artImageTwo = itemView.findViewById(R.id.artImageTwo);
+
 
     }
 

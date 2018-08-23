@@ -2,6 +2,7 @@ package nyc.c4q.artsy4android.homesection;
 
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,6 +42,7 @@ public class Artists_Fragment extends Fragment {
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
     String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTUxNTQyNCwiaWF0IjoxNTM0OTEwNjI0LCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3Y2UwYTBhNWNjY2UwYjk2MGMyZjlkIn0.l-EwcHHx8yblgIaYHtUx97qZd0ZOkQ1gFcFuT3ysKJI";
+    Typeface typeface;
 
 
 
@@ -58,7 +60,8 @@ public class Artists_Fragment extends Fragment {
         tokenSharedPrefs = getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
         //xapptoken = tokenSharedPrefs.getString(xapptoken, null);
         artistsAPI_Call();
-        //setUpRV();
+        typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Adobe_Garamond.ttf");
+        
 
         return rootView;
     }
