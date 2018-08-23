@@ -41,7 +41,7 @@ public class Artists_Fragment extends Fragment {
     Retrofit_Service retroService;
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
-    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTUxNTQyNCwiaWF0IjoxNTM0OTEwNjI0LCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3Y2UwYTBhNWNjY2UwYjk2MGMyZjlkIn0.l-EwcHHx8yblgIaYHtUx97qZd0ZOkQ1gFcFuT3ysKJI";
+    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTY2MTI0MiwiaWF0IjoxNTM1MDU2NDQyLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3ZjFhM2FlMDI2OGQ0YWJmMDM2Yzk2In0.sNWPS5zsAWD3wbWMKq0sjB8tK3UHgc7XqNDn3lSOTrI";
     Typeface typeface;
 
 

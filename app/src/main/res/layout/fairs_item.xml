@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fairs_circle"
         android:text="@string/fairs"
-        android:textStyle="italic||bold"
+        android:textStyle="italic"
         android:padding="5dp"/>
 </android.support.constraint.ConstraintLayout>
