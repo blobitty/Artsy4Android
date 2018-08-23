@@ -26,7 +26,6 @@ import nyc.c4q.artsy4android.homesection.HomePagerFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private static final String TAG = "TEXT";
     HomePagerFragment homePagerFragment = new HomePagerFragment();
 
     @Override
