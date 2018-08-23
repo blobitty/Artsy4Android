@@ -25,6 +25,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.homesection.HomePagerFragment;
 
 public class HomeActivity extends AppCompatActivity {
+    //TODO: Store and retrieve xapp token in sharedpreferences
 
     HomePagerFragment homePagerFragment = new HomePagerFragment();
 
