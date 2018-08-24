@@ -45,8 +45,6 @@ public class HomePagerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         toolbar = view.findViewById(R.id.home_toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tabLayout = view.findViewById(R.id.home_tabs);
         viewPager = view.findViewById(R.id.home_viewpager);
