@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import nyc.c4q.artsy4android.Constants;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.models.Artists;
@@ -41,8 +42,7 @@ public class Artists_Fragment extends Fragment {
     Retrofit_Service retroService;
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
-    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTY2MTI0MiwiaWF0IjoxNTM1MDU2NDQyLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3ZjFhM2FlMDI2OGQ0YWJmMDM2Yzk2In0.sNWPS5zsAWD3wbWMKq0sjB8tK3UHgc7XqNDn3lSOTrI";
-    Typeface typeface;
+    String xapptoken;
 
 
 
@@ -51,17 +51,16 @@ public class Artists_Fragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_artists_, container, false);
         artistFragmentRV = rootView.findViewById(R.id.artist_recyclerView);
-        tokenSharedPrefs = getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-        //xapptoken = tokenSharedPrefs.getString(xapptoken, null);
+        tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
+        xapptoken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
         artistsAPI_Call();
-//        typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/adobegaramondttf");
-        
 
         return rootView;
     }

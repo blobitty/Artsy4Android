@@ -1,6 +1,7 @@
 package nyc.c4q.artsy4android;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -36,13 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_artsy_main_logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-
-//        AssetManager am = getApplicationContext().getAssets();
-//        Typeface typeface = Typeface.createFromAsset(am,
-//                String.format(Locale.US, "fonts/%s", "adobegaramondttf"));
-
-
-
         FragmentTransaction fTransaction = getSupportFragmentManager().beginTransaction();
         fTransaction.replace(R.id.home_fContainer, homePagerFragment);
         fTransaction.commit();

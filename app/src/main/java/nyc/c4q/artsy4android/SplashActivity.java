@@ -23,26 +23,22 @@ public class SplashActivity extends AppCompatActivity {
     Retrofit retrofit;
     Token tokenData;
     String xappToken;
-    static final String client_id = "ff1f77e1f11ef2d881a6";
-    static final String client_secret = "959788b83c942b13023e73180f768e99";
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
     private SharedPreferences tokenSharedPrefs;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getService();
         tokenSharedPrefs = getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        finish();
+        getService();
+
     }
         //Makes a retrofit call to obtain xapp token and save xapp string to sharedpreferences
     public void getService(){
         retrofit_instance = new Retrofit_Instance();
         retrofit = retrofit_instance.getRetrofit();
         Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
-        Call<Token> getTokenData = retroService.createToken(client_id, client_secret);
+        Call<Token> getTokenData = retroService.createToken(Constants.client_id, Constants.client_secret);
         getTokenData.enqueue(new Callback<Token>() {
             @Override
             public void onResponse(Call<Token> call, Response<Token> response) {
@@ -51,8 +47,12 @@ public class SplashActivity extends AppCompatActivity {
                     xappToken = tokenData.getToken();
                     Log.d(TAG, "onResponse: XAPP= " + xappToken);
                     SharedPreferences.Editor editor = tokenSharedPrefs.edit();
-                    editor.putString("xapptoken", xappToken);
+                    editor.putString(Constants.TOKEN_KEY, xappToken);
                     editor.apply();
+
+                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
 
