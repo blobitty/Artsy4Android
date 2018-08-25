@@ -60,7 +60,7 @@ public class Artists_Fragment extends Fragment {
         tokenSharedPrefs = getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
         //xapptoken = tokenSharedPrefs.getString(xapptoken, null);
         artistsAPI_Call();
-        typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Adobe_Garamond.ttf");
+//        typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/adobegaramondttf");
         
 
         return rootView;

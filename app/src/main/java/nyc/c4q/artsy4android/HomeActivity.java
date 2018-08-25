@@ -37,9 +37,9 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.ic_artsy_main_logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        AssetManager am = getApplicationContext().getAssets();
-        Typeface typeface = Typeface.createFromAsset(am,
-                String.format(Locale.US, "fonts/%s", "Adobe_Garamond.ttf"));
+//        AssetManager am = getApplicationContext().getAssets();
+//        Typeface typeface = Typeface.createFromAsset(am,
+//                String.format(Locale.US, "fonts/%s", "adobegaramondttf"));
 
 
 
