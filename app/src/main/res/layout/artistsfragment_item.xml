@@ -22,40 +22,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        android:text="artists"
+        android:text="@string/artists"
         app:layout_constraintStart_toEndOf="@id/artist_profile_img"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/artistNationality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nationality"
-        android:layout_marginLeft="5dp"
+        android:text="@string/nationality"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@id/artist_profile_img"
         app:layout_constraintTop_toBottomOf="@id/artist_name"/>
 
-    <ImageView
-        android:id="@+id/artImageOne"
+    <TextView
+        android:id="@+id/life_spanTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/artImageTwo"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist_profile_img"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/artist_profile_img"
+        app:layout_constraintTop_toBottomOf="@id/artistNationality"/>
 
-    <ImageView
-        android:id="@+id/artImageTwo"
+    <TextView
+        android:id="@+id/hometownTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="92dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artist_profile_img"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/artist_profile_img"
+        app:layout_constraintTop_toBottomOf="@id/life_spanTV"
+        />
 
     <View
         android:id="@+id/divider"
@@ -67,7 +61,7 @@
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artImageOne" />
+        app:layout_constraintTop_toBottomOf="@+id/artist_profile_img" />
 
 
 </android.support.constraint.ConstraintLayout>

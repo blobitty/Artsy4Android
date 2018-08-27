@@ -25,15 +25,10 @@ package nyc.c4q.artsy4android.view;
 
 public class Artist_ViewHolder extends RecyclerView.ViewHolder{
     CircleImageView artistImage;
-    TextView artistName;
-    TextView artistNationality;
-    ImageView artImageOne;
-    ImageView artImageTwo;
-    Artworks artworks;
-    String imageOne_URL, imageTwo_URL, artistImage_URL, artistID;
-    Retrofit_Instance retroInstance;
-    Retrofit retrofit;
-    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNDg3NjEzMywiaWF0IjoxNTM0MjcxMzMzLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3MzFmNjViYzczZTYwNTBmNjQ4MTEwIn0.dJxCO8epG7O6OlOmG-MvWWZS8vPxg6BlyNaSQq4nbc0";
+    TextView artistName, artistNationality, artistLifeSpan, artistHometown;
+    String artistImage_URL, artistID;
+
+
 
 
 
@@ -43,8 +38,8 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
         artistImage = itemView.findViewById(R.id.artist_profile_img);
         artistName = itemView.findViewById(R.id.artist_name);
         artistNationality = itemView.findViewById(R.id.artistNationality);
-        artImageOne = itemView.findViewById(R.id.artImageOne);
-        artImageTwo = itemView.findViewById(R.id.artImageTwo);
+        artistLifeSpan = itemView.findViewById(R.id.life_spanTV);
+        artistHometown = itemView.findViewById(R.id.hometownTV);
         artistImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,12 +50,15 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
 
     }
 
-    public void onBind(Artists artistsList) {
-        artistName.setText(artistsList.getName());
-        artistNationality.setText(artistsList.getNationality());
-        artistID = artistsList.getId();
+    public void onBind(Artists artists) {
+        String lifeSpan = artists.getBirthday() + "-" + artists.getDeathday();
+        artistName.setText(artists.getName());
+        artistNationality.setText(artists.getNationality());
+        artistLifeSpan.setText(lifeSpan);
+        artistHometown.setText(artists.getHometown());
+        artistID = artists.getId();
         //load and set itemView images
-        setImages(artistsList);
+        setImages(artists);
     }
 
     public void setImages(Artists artists){
@@ -71,27 +69,8 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
             Picasso.get()
                     .load(artistImage_URL)
                     .into(artistImage);
-            Log.d(TAG, "onBind Image One: " + artistImage_URL);
+            Log.d(TAG, "Thumbnail Image: " + artistImage_URL);
         }
-        /**
-         * Breakpoint for Bug
-         */
-//
-       //load and set artworkOne
-//        if(artists.get_links().getArtworks() != null){
-//            imageOne_URL = artists.get_links().getArtworks().get(0).get_links().getImage().getHref();
-//
-//            Picasso.get()
-//                    .load(imageOne_URL)
-//                    .into(artImageOne);
-//            Log.d(TAG, "onBind Image Two: " + imageOne_URL);
-//        }
-//        //load and set artWorkTwo
-//        if (artists.get_links().getArtworks().size() > 1){
-//            imageTwo_URL = artists.get_links().getArtworks().get(0).get_links().getImage().getHref();
-//            Picasso.get()
-//                    .load(imageTwo_URL)
-//                    .into(artImageTwo);
     }
 }
 

@@ -18,17 +18,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Bio Body"
+        android:text="@string/bio_body"
         app:layout_constraintTop_toBottomOf="@id/biography_Title" />
 
     <TextView
         android:id="@+id/biography_stats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="STATS"
+        android:text="@string/stats"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/biography_body"/>
-    <view
+    <View
         android:id="@+id/biography_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -39,7 +39,7 @@
         android:id="@+id/related_artists_TV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Related Artsists"
+        android:text="@string/related_artsists"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/biography_stats"/>
 
