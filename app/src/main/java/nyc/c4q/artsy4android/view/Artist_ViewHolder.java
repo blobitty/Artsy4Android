@@ -2,6 +2,7 @@ package nyc.c4q.artsy4android.view;
 
         import android.content.Intent;
         import android.graphics.Typeface;
+        import android.os.Bundle;
         import android.os.Environment;
         import android.support.v7.widget.RecyclerView;
         import android.util.Log;
@@ -27,6 +28,7 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
     CircleImageView artistImage;
     TextView artistName, artistNationality, artistLifeSpan, artistHometown;
     String artistImage_URL, artistID;
+    Artists artists = new Artists();
 
 
 
@@ -43,7 +45,11 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
         artistImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Might have to send data with intent like artist ID and name
+                //send itemview data
+                Bundle itemViewBundle = new Bundle();
+                itemViewBundle.putString("ARTIST_NAME", artistName.getText().toString());
+                itemViewBundle.putString("ARTIST_NATIONALOTY", artistNationality.getText().toString());
+                itemViewBundle.putString("ARTIST_HOMETOWN", artistHometown.getText().toString());
                itemView.getContext().startActivity(new Intent(itemView.getContext(), ArtistPage_Activity.class));
             }
         });

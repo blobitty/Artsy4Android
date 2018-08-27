@@ -9,4 +9,5 @@
     <string name="related_artsists">Related Artsists</string>
     <string name="bio_body">Bio Body</string>
     <string name="stats">STATS</string>
+    <string name="Following">Following</string>
 </resources>
