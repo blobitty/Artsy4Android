@@ -6,10 +6,10 @@
 
     <Button
         android:id="@+id/fair_button"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:background="@drawable/fairs_circle"
         android:text="@string/fairs"
-        android:textStyle="italic"
+        android:textStyle="italic|bold"
         android:padding="5dp"/>
 </android.support.constraint.ConstraintLayout>

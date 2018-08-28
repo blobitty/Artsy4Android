@@ -19,6 +19,7 @@ public class About_Fragment extends Fragment {
         // Required empty public constructor
     }
 
+    //TODO: 1) Create call for single artist via ID
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
