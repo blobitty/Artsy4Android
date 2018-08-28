@@ -5,18 +5,16 @@
     <corners
         android:radius="40dp" />
 
-    <!--<gradient-->
-        <!--android:angle="45"-->
-        <!--android:centerX="float"-->
-        <!--android:centerY="float"-->
-        <!--android:endColor="#b0bfe9"-->
-        <!--android:gradientRadius="integer"-->
-        <!--android:startColor="#817fb4"-->
-        <!--android:type="linear" />-->
+    <gradient
+        android:angle="45"
+        android:endColor="#e3f2fd"
+        android:gradientRadius="1.2dp"
+        android:startColor="#c5cae9"
+        android:type="linear" />
 
     <!--If your shape requires only one solid color-->
-    <solid
-        android:color="#a5ccc1f2" />
+    <!--<solid-->
+        <!--android:color="#a5ccc1f2" />-->
 
     <size
         android:width="82dp"
@@ -25,8 +23,8 @@
     <!--Use android:dashWidth="2dp" and android:dashGap="2dp"
     to add dashes to your stroke-->
     <stroke
-        android:width="1dp"
-        android:color="#000000" />
+        android:width="0dp"
+        android:color="#fffcfc" />
 
     <!--If you want to add padding-->
     <!-- <padding

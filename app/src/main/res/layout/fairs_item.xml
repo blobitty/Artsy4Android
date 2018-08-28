@@ -9,7 +9,11 @@
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:background="@drawable/fairs_circle"
+        android:layout_margin="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingHorizontal="3dp"
         android:text="@string/fairs"
-        android:textStyle="italic|bold"
+        android:fontFamily="monospace"
         android:padding="5dp"/>
 </android.support.constraint.ConstraintLayout>
