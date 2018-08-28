@@ -48,9 +48,12 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
                 //send itemview data
                 Bundle itemViewBundle = new Bundle();
                 itemViewBundle.putString("ARTIST_NAME", artistName.getText().toString());
-                itemViewBundle.putString("ARTIST_NATIONALOTY", artistNationality.getText().toString());
+                itemViewBundle.putString("ARTIST_NATIONALITY", artistNationality.getText().toString());
                 itemViewBundle.putString("ARTIST_HOMETOWN", artistHometown.getText().toString());
-               itemView.getContext().startActivity(new Intent(itemView.getContext(), ArtistPage_Activity.class));
+
+                Intent intent = new Intent(itemView.getContext(), ArtistPage_Activity.class);
+                intent.putExtras(itemViewBundle);
+               itemView.getContext().startActivity(intent);
             }
         });
 

@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,10 +14,13 @@ import nyc.c4q.artsy4android.artistpage.ArtistPager_Fragment;
 
 public class ArtistPage_Activity extends AppCompatActivity {
 
+    private static final String TAG = "HELP!!" ;
     ArtistPager_Fragment artistPager_fragment = new ArtistPager_Fragment();
     FloatingActionButton backFAB;
     Button followFAB;
-    TextView artistName, artistNationality, artistGender;
+    TextView artistName, artistNationality, artistHometown;
+    String artist, nationality, hometown;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +28,19 @@ public class ArtistPage_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_artist_page_);
         artistName = findViewById(R.id.artistpage_name);
         artistNationality = findViewById(R.id.artistpage_nationality);
-        artistGender = findViewById(R.id.artistpage_gender);
+        artistHometown = findViewById(R.id.artistpage_hometown);
         backFAB = findViewById(R.id.exitArtistPage_FAB);
         followFAB = findViewById(R.id.follow_button);
+        Intent intent = getIntent();
+        artist = intent.getExtras().get("ARTIST_NAME").toString();
+        nationality = intent.getExtras().get("ARTIST_NATIONALITY").toString();
+        hometown = intent.getExtras().get("ARTIST_HOMETOWN").toString();
 
+        setTexts(artist, nationality, hometown);
+
+        /**
+         * set Texts for two buttons in Activity
+         */
         followFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +61,11 @@ public class ArtistPage_Activity extends AppCompatActivity {
         fTransaction.commit();
     }
 
-    public void setTexts(){
-
+    public void setTexts(String artist, String nationality, String hometown){
+        artistName.setText(artist);
+        artistHometown.setText(hometown);
+        artistNationality.setText(nationality);
     }
+
+
 }

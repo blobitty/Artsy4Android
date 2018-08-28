@@ -45,7 +45,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,19 +57,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artistpage_name" />
 
     <TextView
-        android:id="@+id/artistpage_gender"
+        android:id="@+id/artistpage_hometown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/follow_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +83,7 @@
         android:background="@color/colorAccent"
         android:textStyle="bold"
         android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="@id/artistpage_gender" />
+        app:layout_constraintTop_toBottomOf="@id/artistpage_hometown" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/exitArtistPage_FAB"
