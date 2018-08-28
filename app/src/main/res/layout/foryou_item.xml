@@ -52,7 +52,7 @@
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV4" />
+            app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV3" />
 
         <GridView
             android:id="@+id/recc_artworks_Grid"
@@ -65,29 +65,29 @@
 
         <ImageView
             android:id="@+id/recentlyViewed_IV4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="52dp"
+            android:layout_width="140dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toEndOf="@+id/recentlyViewed_IV3"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV2"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView
             android:id="@+id/recentlyViewed_IV3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="200dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV1"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView
             android:id="@+id/recentlyViewed_IV2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="124dp"
+            android:layout_width="140dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="72dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/recentlyViewed_IV1"
             app:layout_constraintTop_toBottomOf="@+id/recentlyviewed_TV"
@@ -95,8 +95,8 @@
 
         <ImageView
             android:id="@+id/recentlyViewed_IV1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="200dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"

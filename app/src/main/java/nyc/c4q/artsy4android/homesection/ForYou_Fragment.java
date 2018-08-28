@@ -1,6 +1,7 @@
 package nyc.c4q.artsy4android.homesection;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +10,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import nyc.c4q.artsy4android.Constants;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.FairsList_Adapter;
 import nyc.c4q.artsy4android.models.Fairs;
@@ -23,6 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import static android.content.Context.MODE_PRIVATE;
 import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
 
 /**
@@ -36,8 +42,12 @@ public class ForYou_Fragment extends Fragment {
     Retrofit_Instance retroInstance;
     Retrofit retrofit;
     Retrofit_Service retroService;
-    String xapptoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsImV4cCI6MTUzNTY2MTI0MiwiaWF0IjoxNTM1MDU2NDQyLCJhdWQiOiI1YWY4ODE4NDc2MjJkZDRhMjhhMTZkZGQiLCJpc3MiOiJHcmF2aXR5IiwianRpIjoiNWI3ZjFhM2FlMDI2OGQ0YWJmMDM2Yzk2In0.sNWPS5zsAWD3wbWMKq0sjB8tK3UHgc7XqNDn3lSOTrI";
-
+    String xapptoken;
+    private SharedPreferences tokenSharedPrefs;
+    private static final String SHARED_PREFS_KEY = "sharedPrefs";
+    String[] recentlyViewedURLS = new String[4];
+    ImageView recentlyViewed_1, recentlyViewed_2, recentlyViewed_3, recentlyViewed_4;
+    ImageView[] imageViewArray = new ImageView[4];
 
 
     public ForYou_Fragment() {
@@ -48,9 +58,17 @@ public class ForYou_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
+        xapptoken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
         rootView = inflater.inflate(R.layout.foryou_item, container, false);
         fairsRV = rootView.findViewById(R.id.artFair_recycler);
         fairsAPI_Call();
+        recentlyViewed_1 = rootView.findViewById(R.id.recentlyViewed_IV1);
+        recentlyViewed_2 = rootView.findViewById(R.id.recentlyViewed_IV2);
+        recentlyViewed_3 = rootView.findViewById(R.id.recentlyViewed_IV3);
+        recentlyViewed_4 = rootView.findViewById(R.id.recentlyViewed_IV4);
+        viewData_Collector();
+        recViewed_ImgLoader();
         return rootView;
     }
 
@@ -85,6 +103,32 @@ public class ForYou_Fragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         fairsRV.setAdapter(fairsList_adapter);
         fairsRV.setLayoutManager(linearLayoutManager);
+    }
+
+    public void recViewed_ImgLoader(){
+
+        for (int i = 0; i < recentlyViewedURLS.length; i++){
+            Picasso.get()
+                    .load(recentlyViewedURLS[i])
+                    .into(imageViewArray[i]);
+        }
+
+//        Picasso.get()
+//                .load(recentlyViewedURLS[0])
+//                .into(imageViewArray[0]);
+
+
+    }
+
+    public void viewData_Collector(){
+        recentlyViewedURLS[0] = "https://d32dm0rphc51dk.cloudfront.net/hopJunQLJ3jr3zxagXkC3w/larger.jpg";
+        recentlyViewedURLS[1] = "https://d32dm0rphc51dk.cloudfront.net/A3L5cLa-qjh2s4amBh3KVw/large.jpg";
+        recentlyViewedURLS[2] = "https://d32dm0rphc51dk.cloudfront.net/NOpIAwQa-3r51Cg9qXKbfA/larger.jpg";
+        recentlyViewedURLS[3] = "https://d32dm0rphc51dk.cloudfront.net/9nWa7ol_LQIg_dunHYBoUQ/larger.jpg";
+        imageViewArray[0] = recentlyViewed_1;
+        imageViewArray[1] = recentlyViewed_2;
+        imageViewArray[2] = recentlyViewed_3;
+        imageViewArray[3] = recentlyViewed_4;
     }
 
 
