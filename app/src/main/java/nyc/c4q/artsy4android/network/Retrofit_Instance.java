@@ -12,15 +12,6 @@ public class Retrofit_Instance {
     public static Retrofit_Instance instance;
     static final String BASE_URL = "https:/api.artsy.net/api/";
 
-
-    public Retrofit_Instance getInstance() {
-        if (instance == null) {
-            instance = new Retrofit_Instance();
-        }
-        return instance;
-    }
-
-
     public Retrofit getRetrofit(){
         return retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

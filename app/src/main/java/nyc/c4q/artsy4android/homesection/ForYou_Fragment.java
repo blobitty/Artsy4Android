@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import nyc.c4q.artsy4android.Constants;
+import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.FairsList_Adapter;
 import nyc.c4q.artsy4android.models.Fairs;

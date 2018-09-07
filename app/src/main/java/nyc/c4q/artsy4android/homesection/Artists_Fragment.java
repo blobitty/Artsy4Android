@@ -2,7 +2,6 @@ package nyc.c4q.artsy4android.homesection;
 
 
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import nyc.c4q.artsy4android.Constants;
+import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.models.Artists;

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.network.Retrofit_Service;
