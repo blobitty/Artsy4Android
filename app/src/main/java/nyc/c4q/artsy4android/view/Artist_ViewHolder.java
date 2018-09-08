@@ -1,28 +1,20 @@
 package nyc.c4q.artsy4android.view;
 
         import android.content.Intent;
-        import android.graphics.Typeface;
         import android.os.Bundle;
-        import android.os.Environment;
         import android.support.v7.widget.RecyclerView;
         import android.util.Log;
         import android.view.View;
-        import android.widget.ImageView;
         import android.widget.TextView;
 
         import com.squareup.picasso.Picasso;
 
-        import java.io.File;
-
         import de.hdodenhof.circleimageview.CircleImageView;
-        import nyc.c4q.artsy4android.ArtistPage_Activity;
+        import nyc.c4q.artsy4android.artistpage.ArtistPage_Activity;
         import nyc.c4q.artsy4android.R;
         import nyc.c4q.artsy4android.models.Artists;
-        import nyc.c4q.artsy4android.models.Artworks;
-        import nyc.c4q.artsy4android.network.Retrofit_Instance;
-        import retrofit2.Retrofit;
 
-        import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
+        import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
 public class Artist_ViewHolder extends RecyclerView.ViewHolder{
     CircleImageView artistImage;

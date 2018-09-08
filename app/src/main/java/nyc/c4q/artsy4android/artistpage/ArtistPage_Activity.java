@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android;
+package nyc.c4q.artsy4android.artistpage;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.artistpage.ArtistPager_Fragment;
 
 public class ArtistPage_Activity extends AppCompatActivity {

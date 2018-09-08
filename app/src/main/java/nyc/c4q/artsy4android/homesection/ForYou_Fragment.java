@@ -18,7 +18,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.adapter.FairsList_Adapter;
+import nyc.c4q.artsy4android.controller.FairsList_Adapter;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
@@ -29,7 +29,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import static android.content.Context.MODE_PRIVATE;
-import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.

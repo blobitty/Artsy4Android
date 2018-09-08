@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import nyc.c4q.artsy4android.homesection.HomeActivity;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
@@ -16,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
 public class SplashActivity extends AppCompatActivity {
 

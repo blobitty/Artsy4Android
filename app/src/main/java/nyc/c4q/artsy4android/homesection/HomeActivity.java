@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android;
+package nyc.c4q.artsy4android.homesection;
 
 import android.Manifest;
 import android.content.Intent;

@@ -15,7 +15,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.adapter.ArtistsList_Adapter;
+import nyc.c4q.artsy4android.controller.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.models.Artists;
 import nyc.c4q.artsy4android.models.ArtistsList;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
@@ -26,7 +26,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import static android.content.Context.MODE_PRIVATE;
-import static nyc.c4q.artsy4android.adapter.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -82,7 +82,7 @@ public class Artists_Fragment extends Fragment {
             public void onResponse(Call<ArtistsList> call, Response<ArtistsList> response) {
                 artistsListHolder = response.body();
                 artistsList = artistsListHolder.get_embedded().getArtists();
-                //Loggers to check null references when traversing Data Object
+                //Loggers to check null references when traversing nested data Object
                 Log.i(TAG, "onResponse: " + artistsListHolder);
                 Log.i(TAG, "onRawResponse: " + response.raw());
                 Log.i(TAG, "onCallRequest: " + call.request());

@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".HomeActivity"
+        <activity android:name=".homesection.HomeActivity"
             android:label="Artsy">
         </activity>
-        <activity android:name=".ArtistPage_Activity" />
+        <activity android:name=".artistpage.ArtistPage_Activity" />
         <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

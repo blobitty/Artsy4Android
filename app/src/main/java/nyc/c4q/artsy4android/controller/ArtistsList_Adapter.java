@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.adapter;
+package nyc.c4q.artsy4android.controller;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
