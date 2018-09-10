@@ -30,7 +30,7 @@ public interface Retrofit_Service {
                                            @Header("X-Xapp-Token") String xappToken);
 
         @GET("artists/{artist_id}")
-        Call<Artist> getArtist(@Path("artist_id") String artist_id);
+        Call<Artist> getArtist(@Path("artist_id") String artist_id, @Header("X-Xapp-Token") String xappToken);
 
         @GET("fairs")
         Call<FairsList> getFairsList(@Query("status") String status, @Query("size") String size,@Header("X-Xapp-Token") String xappToken);
