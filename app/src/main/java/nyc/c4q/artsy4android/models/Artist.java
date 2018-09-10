@@ -2,7 +2,7 @@ package nyc.c4q.artsy4android.models;
 
 import java.util.List;
 
-public class Artists {
+public class Artist {
     /**SLUG OR ID VALUE CAN BE USED AS RETROFIT @PARAM TO DIRECT TO INDIVIDUAL ENDPOINT
      */
     String id;

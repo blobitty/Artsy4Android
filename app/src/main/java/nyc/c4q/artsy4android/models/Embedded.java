@@ -3,9 +3,9 @@ package nyc.c4q.artsy4android.models;
 import java.util.List;
 
 public class Embedded {
-    List<Artists> artists;
+    List<Artist> artists;
 
-    public List<Artists> getArtists() {
+    public List<Artist> getArtists() {
         return artists;
     }
 }

@@ -2,7 +2,7 @@ package nyc.c4q.artsy4android.network;
 
 import java.util.List;
 
-import nyc.c4q.artsy4android.models.Artists;
+import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
 import nyc.c4q.artsy4android.models.Search_Results;
@@ -30,7 +30,7 @@ public interface Retrofit_Service {
                                            @Header("X-Xapp-Token") String xappToken);
 
         @GET("artists/{artist_id}")
-        Call<Artists> getArtist(@Path("artist_id") String artist_id);
+        Call<Artist> getArtist(@Path("artist_id") String artist_id);
 
         @GET("fairs")
         Call<FairsList> getFairsList(@Query("status") String status, @Query("size") String size,@Header("X-Xapp-Token") String xappToken);

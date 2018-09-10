@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.artistpage.ArtistPager_Fragment;
+import nyc.c4q.artsy4android.models.Artist;
 
 public class ArtistPage_Activity extends AppCompatActivity {
 
@@ -21,7 +22,6 @@ public class ArtistPage_Activity extends AppCompatActivity {
     Button followFAB;
     TextView artistName, artistNationality, artistHometown;
     String artist, nationality, hometown;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

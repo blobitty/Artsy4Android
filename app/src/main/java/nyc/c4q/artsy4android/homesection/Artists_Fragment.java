@@ -16,7 +16,7 @@ import java.util.List;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.controller.ArtistsList_Adapter;
-import nyc.c4q.artsy4android.models.Artists;
+import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
 import nyc.c4q.artsy4android.network.Retrofit_Service;
@@ -34,14 +34,13 @@ import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 public class Artists_Fragment extends Fragment {
     View rootView;
     RecyclerView artistFragmentRV;
-    List <Artists> artistsList;
+    List <Artist> artistsList;
     ArtistsList artistsListHolder;
     Retrofit_Instance retroInstance;
     Retrofit retrofit;
     Retrofit_Service retroService;
     private SharedPreferences tokenSharedPrefs;
-    private static final String SHARED_PREFS_KEY = "sharedPrefs";
-    String xapptoken;
+    String xappToken;
 
 
 
@@ -57,8 +56,9 @@ public class Artists_Fragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_artists_, container, false);
         artistFragmentRV = rootView.findViewById(R.id.artist_recyclerView);
+        String SHARED_PREFS_KEY = "sharedPrefs";
         tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-        xapptoken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
+        xappToken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
         artistsAPI_Call();
 
         return rootView;
@@ -76,7 +76,7 @@ public class Artists_Fragment extends Fragment {
         retroInstance = new Retrofit_Instance();
         retrofit = retroInstance.getRetrofit();
         retroService = retrofit.create(Retrofit_Service.class);
-        Call<ArtistsList> getArtistsList = retroService.getArtistsList("contemporary", true, "-trending", 20, xapptoken);
+        Call<ArtistsList> getArtistsList = retroService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
         getArtistsList.enqueue(new Callback<ArtistsList>() {
             @Override
             public void onResponse(Call<ArtistsList> call, Response<ArtistsList> response) {
@@ -85,10 +85,6 @@ public class Artists_Fragment extends Fragment {
                 //Loggers to check null references when traversing nested data Object
                 Log.i(TAG, "onResponse: " + artistsListHolder);
                 Log.i(TAG, "onRawResponse: " + response.raw());
-                Log.i(TAG, "onCallRequest: " + call.request());
-                Log.i(TAG, "artistList Contents " + artistsListHolder.get_embedded());
-                Log.i(TAG, "Artist Thumbnail Image " + artistsListHolder.get_embedded().getArtists().get(0).get_links().getThumbnail().getHref());
-
                setUpRV();
             }
 

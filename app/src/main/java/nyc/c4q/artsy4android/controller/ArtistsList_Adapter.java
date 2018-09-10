@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.models.Artists;
+import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.view.Artist_ViewHolder;
 
 public class ArtistsList_Adapter extends RecyclerView.Adapter<Artist_ViewHolder> {
-    List<Artists> artistsList;
+    List<Artist> artistsList;
     public static final String TAG = "HELP!";
 
-    public ArtistsList_Adapter(List<Artists> artistsList){
+    public ArtistsList_Adapter(List<Artist> artistsList){
         this.artistsList = artistsList;
     }
 
@@ -28,7 +28,7 @@ public class ArtistsList_Adapter extends RecyclerView.Adapter<Artist_ViewHolder>
 
     @Override
     public void onBindViewHolder(Artist_ViewHolder holder, int position) {
-        Artists artists = artistsList.get(position);
+        Artist artists = artistsList.get(position);
 
         holder.onBind(artists);
     }
