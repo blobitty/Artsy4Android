@@ -34,7 +34,8 @@
             app:itemBackground="@color/colorPrimary"
             app:itemIconTint="@color/colorPrimaryDark"
             app:itemTextColor="@color/colorPrimary"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:menu="@menu/bottom_navigation_menu"
+            />
 
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>

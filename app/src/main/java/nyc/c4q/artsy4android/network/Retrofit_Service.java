@@ -44,8 +44,8 @@ public interface Retrofit_Service {
         Call<List<Search_Results>> getSearchResults(@Query("q") String q,
                                                     @Query("size") int size,
                                                     @Query("type") String type);
-        @GET("artworks/{id}")
-        Call<Artworks> getArtworks(@Path("id") String id, @Header("X-Xapp-Token") String xappToken);
+        @GET("artworks/{artist_id}")
+        Call<Artworks> getArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
 
 }
 

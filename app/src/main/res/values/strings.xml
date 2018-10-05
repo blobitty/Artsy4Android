@@ -10,4 +10,8 @@
     <string name="bio_body">Bio Body</string>
     <string name="stats">STATS</string>
     <string name="Following">Following</string>
+    <string name="home">Home</string>
+    <string name="people">People</string>
+    <string name="messages">Messages</string>
+    <string name="notification">Notification</string>
 </resources>

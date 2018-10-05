@@ -16,6 +16,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.controller.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
+import nyc.c4q.artsy4android.models.Artworks;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
@@ -35,10 +36,11 @@ public class About_Fragment extends Fragment {
     String xappToken;
     SharedPreferences tokenSharedPrefs;
     Artist artist = new Artist();
+    Artworks artworks = new Artworks();
     String artistID;
     TextView bioBody, stats;
-    private Retrofit_Instance retroInstance;
-    private Retrofit retrofit;
+    private Retrofit_Instance retroInstance = new Retrofit_Instance();;
+    private Retrofit retrofit = retroInstance.getRetrofit();;
     View rootView;
 
     public About_Fragment() {
@@ -59,12 +61,12 @@ public class About_Fragment extends Fragment {
         artistID = getActivity().getIntent().getExtras().getString("ARTIST_ID");
         Log.i(TAG, "onCreateView: ARTIST ID = " + artistID);
         artistsAPI_Call();
+        artworksAPI_Call(artistID);
         return rootView;
     }
 
     public void artistsAPI_Call(){
-        retroInstance = new Retrofit_Instance();
-        retrofit = retroInstance.getRetrofit();
+
         Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
 
         Call<Artist> getArtist = retroService.getArtist(artistID, xappToken);
@@ -82,6 +84,24 @@ public class About_Fragment extends Fragment {
             @Override
             public void onFailure(Call<Artist> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t);
+                t.printStackTrace();
+            }
+        });
+    }
+    public void artworksAPI_Call(String artistID){
+        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
+        Call<Artworks> getArtworks = retroService.getArtworks(artistID, xappToken);
+
+        getArtworks.enqueue(new Callback<Artworks>() {
+            @Override
+            public void onResponse(Call<Artworks> call, Response<Artworks> response) {
+                artworks = response.body();
+                Log.i(TAG, "ARTWORKS onResponse: " + artworks);
+                Log.i(TAG, "onResponse: " + response.raw());
+            }
+
+            @Override
+            public void onFailure(Call<Artworks> call, Throwable t) {
                 t.printStackTrace();
             }
         });

@@ -4,30 +4,30 @@
 
     <item
         android:id="@+id/home_button"
-        android:title="Home"
-        android:visible="false"
-        android:icon="@drawable/ic_home_image"
+        android:title="@string/home"
+        android:visible="true"
+        android:icon="@drawable/home_button"
         />
 
     <item
         android:id="@+id/search_button"
-        android:title="People"
-        android:visible="false"
+        android:title="@string/people"
+        android:visible="true"
         android:icon="@drawable/ic_search_image" />
 
 
     <item
         android:id="@+id/auction_button"
-        android:title="Messages"
-        android:visible="false"
+        android:title="@string/messages"
+        android:visible="true"
         android:icon="@drawable/ic_messaging_image"/>
 
 
 
     <item
         android:id="@+id/saves_button"
-        android:title="Notification"
-        android:visible="false"
+        android:title="@string/notification"
+        android:visible="true"
         android:icon="@drawable/ic_favorites_image" />
 
 
