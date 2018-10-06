@@ -23,8 +23,7 @@ public class SplashActivity extends AppCompatActivity {
 
     Retrofit_Instance retrofit_instance;
     Retrofit retrofit;
-    Token tokenData;
-    String xappToken;
+
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
     private SharedPreferences tokenSharedPrefs;
 
@@ -32,37 +31,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tokenSharedPrefs = getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-        getService();
+
 
     }
         //Makes a retrofit call to obtain xapp token and save xapp string to sharedpreferences
-    public void getService(){
-        retrofit_instance = new Retrofit_Instance();
-        retrofit = retrofit_instance.getRetrofit();
-        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
-        Call<Token> getTokenData = retroService.createToken(Constants.client_id, Constants.client_secret);
-        getTokenData.enqueue(new Callback<Token>() {
-            @Override
-            public void onResponse(Call<Token> call, Response<Token> response) {
-                if (response.isSuccessful()){
-                    tokenData = response.body();
-                    xappToken = tokenData.getToken();
-                    Log.d(TAG, "onResponse: XAPP= " + xappToken);
-                    SharedPreferences.Editor editor = tokenSharedPrefs.edit();
-                    editor.putString(Constants.TOKEN_KEY, xappToken);
-                    editor.apply();
-
-                    Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Token> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.toString());
-                t.printStackTrace();
-            }
-        });
-    }
+//        Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+//    startActivity(intent);
+//    finish();
 }

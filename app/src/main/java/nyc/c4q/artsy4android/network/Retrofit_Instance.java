@@ -9,12 +9,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit_Instance {
     private static Retrofit retrofit;
-    static final String BASE_URL = "https:/api.artsy.net/api/";
+    private static final String BASE_URL = "https:/api.artsy.net/api/";
 
     public static Retrofit getRetrofit(){
-        return retrofit = new Retrofit.Builder()
+        if (retrofit == null) return retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        return retrofit;
     }
 }

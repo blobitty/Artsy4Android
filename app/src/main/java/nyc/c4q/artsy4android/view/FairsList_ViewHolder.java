@@ -15,7 +15,7 @@ public class FairsList_ViewHolder extends RecyclerView.ViewHolder{
 
         fairsButton = itemView.findViewById(R.id.fair_button);
     }
-
+    //set text for fairs recyclerview items in the 'ForYou_Fragment"
     public void onBind(Fairs fairs){
         fairsButton.setText(fairs.getName());
     }
