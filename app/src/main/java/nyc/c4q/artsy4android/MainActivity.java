@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.homesection;
+package nyc.c4q.artsy4android;
 
 import android.Manifest;
 import android.content.Intent;
@@ -30,7 +30,7 @@ import java.util.Locale;
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.homesection.HomePagerFragment;
 
-public class HomeActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     //TODO: Store and retrieve xapp token in sharedpreferences
 
     HomePagerFragment homePagerFragment = new HomePagerFragment();

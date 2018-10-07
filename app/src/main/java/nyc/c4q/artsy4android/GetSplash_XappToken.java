@@ -1,11 +1,7 @@
 package nyc.c4q.artsy4android;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
-
-import nyc.c4q.artsy4android.homesection.HomeActivity;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.network.Retrofit_Instance;
