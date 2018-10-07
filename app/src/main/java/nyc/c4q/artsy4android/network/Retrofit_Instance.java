@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit_Instance {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "https:/api.artsy.net/api/";
+    private static final String BASE_URL = "https://api.artsy.net/api/";
 
     public static Retrofit getRetrofit(){
         if (retrofit == null) return retrofit = new Retrofit.Builder()

@@ -19,11 +19,9 @@ import retrofit2.Retrofit;
 
 import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity implements Splash_Contract{
 
-    Retrofit_Instance retrofit_instance;
-    Retrofit retrofit;
-
+    GetSplash_XappToken splash_xappToken = new GetSplash_XappToken();
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
     private SharedPreferences tokenSharedPrefs;
 
@@ -31,11 +29,17 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tokenSharedPrefs = getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-
+        getXappToken(SHARED_PREFS_KEY, tokenSharedPrefs);
 
     }
-        //Makes a retrofit call to obtain xapp token and save xapp string to sharedpreferences
-//        Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
-//    startActivity(intent);
-//    finish();
+
+    @Override
+    public void getXappToken(String SHARED_PREFS_KEY, SharedPreferences sharedPreferences) {
+          splash_xappToken.getXappToken(SHARED_PREFS_KEY,sharedPreferences);
+          Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+          startActivity(intent);
+          finish();
+    }
+    //Makes a retrofit call to obtain xapp token and save xapp string to sharedpreferences
+
 }
