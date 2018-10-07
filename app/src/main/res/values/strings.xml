@@ -14,4 +14,10 @@
     <string name="people">People</string>
     <string name="messages">Messages</string>
     <string name="notification">Notification</string>
+    <string name="artsy_market_header">BUYING ART ON ARTSY IS SIMPLE</string>
+    <string name="hearticon">heartIcon</string>
+    <string name="follow_artists_and_find_works_you_love">Follow artists and find works you love</string>
+    <string name="find_your_ongoing_conversations_and_bidding_activity_here">Find your ongoing conversations and bidding activity here</string>
+    <string name="contact_galleries_or_bid_in_auctions_to_purchase_the_works">Contact galleries or bid in auctions to purchase the works</string>
+    <string name="easily_process_payment_through_our_secure_platform">Easily process payment through our secure platform</string>
 </resources>

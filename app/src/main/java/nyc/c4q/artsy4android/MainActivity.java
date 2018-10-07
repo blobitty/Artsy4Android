@@ -52,19 +52,6 @@ public class MainActivity extends AppCompatActivity {
         fTransaction.replace(R.id.home_fContainer, homePagerFragment);
         fTransaction.commit();
 
-
-
     }
-
-    public void setBottomNavColors(final BottomNavigationView bottomNav){
-        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                item.getIconTintList();
-                return true;
-            }
-        });
-    }
-
 
 }

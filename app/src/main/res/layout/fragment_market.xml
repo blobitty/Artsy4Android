@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auction.MarketPlaceFragment"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/artsy_market_header"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/artworkImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_artwork_icon_transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messagingImageView" />
+
+    <ImageView
+        android:id="@+id/personImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/ic_profile_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heartImageView" />
+
+    <ImageView
+        android:id="@+id/messagingImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/ic_messaging_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personImageView" />
+
+    <ImageView
+        android:id="@+id/heartImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/hearticon"
+        android:src="@drawable/ic_favorites_image"
+        app:layout_constraintEnd_toStartOf="@+id/followArtistTextView"
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+
+    <TextView
+        android:id="@+id/followArtistTextView"
+        android:layout_width="220dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/follow_artists_and_find_works_you_love"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
+
+    <TextView
+        android:id="@+id/contactGalleriesTextView"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/contact_galleries_or_bid_in_auctions_to_purchase_the_works"
+        app:layout_constraintBottom_toTopOf="@+id/conversationsTextView"
+        app:layout_constraintStart_toEndOf="@+id/personImageView"
+        app:layout_constraintTop_toBottomOf="@+id/followArtistTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/conversationsTextView"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/find_your_ongoing_conversations_and_bidding_activity_here"
+        app:layout_constraintStart_toEndOf="@+id/messagingImageView"
+        app:layout_constraintTop_toBottomOf="@id/contactGalleriesTextView" />
+
+    <TextView
+        android:id="@+id/paymentTextView"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/easily_process_payment_through_our_secure_platform"
+        app:layout_constraintStart_toEndOf="@+id/artworkImageView"
+        app:layout_constraintTop_toBottomOf="@+id/conversationsTextView" />
+</android.support.constraint.ConstraintLayout>

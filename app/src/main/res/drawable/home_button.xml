@@ -3,7 +3,7 @@
 
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/ic_home_icon_purple"
+        android:drwawable="@drawable/ic_home_icon_purple"
         />
     <item
         android:drawable="@drawable/ic_home_image"/>
