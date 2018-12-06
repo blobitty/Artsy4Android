@@ -78,7 +78,7 @@
         android:id="@+id/follow_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Follow"
+        android:text="@string/follow"
         android:textColor="#ffff"
         android:background="@color/colorAccent"
         android:textStyle="bold"
