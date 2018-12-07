@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SplashActivity extends AppCompatActivity implements Splash_Contract{
+public class SplashActivity extends AppCompatActivity implements SplashCall {
 
     GetSplash_XappToken splash_xappToken = new GetSplash_XappToken();
     private static final String SHARED_PREFS_KEY = "sharedPrefs";

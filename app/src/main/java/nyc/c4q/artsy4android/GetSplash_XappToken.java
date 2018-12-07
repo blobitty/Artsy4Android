@@ -12,7 +12,7 @@ import retrofit2.Response;
 
 import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
 
-public class GetSplash_XappToken implements Splash_Contract {
+public class GetSplash_XappToken implements SplashCall {
     private Token tokenData;
     private String xappToken;
 
