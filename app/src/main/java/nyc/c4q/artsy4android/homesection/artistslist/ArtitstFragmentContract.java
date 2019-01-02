@@ -7,7 +7,7 @@ public interface ArtitstFragmentContract {
 
     interface Network{
 
-        void artistsAPI_Call(RetrofitService retrofitService, String xappToken);
+        void artistsAPI_Call(String xappToken);
 
     }
 

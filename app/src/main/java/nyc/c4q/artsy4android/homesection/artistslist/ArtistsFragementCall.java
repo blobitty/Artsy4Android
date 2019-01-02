@@ -23,7 +23,8 @@ public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
     ArtistsList artistsListHolder;
 
     @Override
-    public void artistsAPI_Call(RetrofitService retrofitService, String xappToken) {
+    public void artistsAPI_Call(String xappToken) {
+        RetrofitService retrofitService;
         //class for retrofit implementation
         RetrofitInstance retroInst = new RetrofitInstance();
         //factory method for call with baseURL
@@ -45,7 +46,7 @@ public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
             }
 
             @Override
-            public void onFailure(Call<ArtistsList> call, Throwable t) {
+            public void onFailure(@NonNull Call<ArtistsList> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: " + t.toString());
                 t.printStackTrace();
             }

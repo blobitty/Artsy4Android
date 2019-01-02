@@ -31,7 +31,7 @@ import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArtistsFragment extends Fragment {
+public class ArtistsFragment extends Fragment{
     View rootView;
     RecyclerView artistFragmentRV;
     List <Artist> artistsList;
@@ -63,6 +63,7 @@ public class ArtistsFragment extends Fragment {
 
         return rootView;
     }
+
 
 
     public void setUpRV(){
