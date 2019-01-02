@@ -59,7 +59,7 @@ public class ArtistsFragment extends Fragment {
         String SHARED_PREFS_KEY = "sharedPrefs";
         tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
         xappToken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
-        artistsAPI_Call();
+        //artistsAPI_Call();
 
         return rootView;
     }
@@ -87,13 +87,13 @@ public class ArtistsFragment extends Fragment {
 //                Log.i(TAG, "onRawResponse: " + response.raw());
 //               setUpRV();
 //            }
-
-            @Override
-            public void onFailure(Call<ArtistsList> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.toString());
-                t.printStackTrace();
-            }
-        });
-    }
+//
+//            @Override
+//            public void onFailure(Call<ArtistsList> call, Throwable t) {
+//                Log.d(TAG, "onFailure: " + t.toString());
+//                t.printStackTrace();
+//            }
+//        });
+//    }
 
 }
