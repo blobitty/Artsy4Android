@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.homesection;
+package nyc.c4q.artsy4android.homesection.artistslist;
 
 
 import android.content.SharedPreferences;
@@ -15,36 +15,36 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.controller.ArtistsList_Adapter;
+import nyc.c4q.artsy4android.controller.ArtistsListAdapter;
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.network.Retrofit_Instance;
-import nyc.c4q.artsy4android.network.Retrofit_Service;
+import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import static android.content.Context.MODE_PRIVATE;
-import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Artists_Fragment extends Fragment {
+public class ArtistsFragment extends Fragment {
     View rootView;
     RecyclerView artistFragmentRV;
     List <Artist> artistsList;
     ArtistsList artistsListHolder;
-    Retrofit_Instance retroInstance;
+    RetrofitInstance retroInstance;
     Retrofit retrofit;
-    Retrofit_Service retroService;
+    RetrofitService retroService;
     private SharedPreferences tokenSharedPrefs;
     String xappToken;
 
 
 
-    public Artists_Fragment() {
+    public ArtistsFragment() {
         // Required empty public constructor
     }
 
@@ -66,27 +66,27 @@ public class Artists_Fragment extends Fragment {
 
 
     public void setUpRV(){
-        ArtistsList_Adapter artist_adapter = new ArtistsList_Adapter(artistsList);
+        ArtistsListAdapter artist_adapter = new ArtistsListAdapter(artistsList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         artistFragmentRV.setAdapter(artist_adapter);
         artistFragmentRV.setLayoutManager(linearLayoutManager);
     }
 
-    public void artistsAPI_Call(){
-        retroInstance = new Retrofit_Instance();
-        retrofit = retroInstance.getRetrofit();
-        retroService = retrofit.create(Retrofit_Service.class);
-        Call<ArtistsList> getArtistsList = retroService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
-        getArtistsList.enqueue(new Callback<ArtistsList>() {
-            @Override
-            public void onResponse(Call<ArtistsList> call, Response<ArtistsList> response) {
-                artistsListHolder = response.body();
-                artistsList = artistsListHolder.get_embedded().getArtists();
-                //Loggers to check null references when traversing nested data Object
-                Log.i(TAG, "onResponse: " + artistsListHolder);
-                Log.i(TAG, "onRawResponse: " + response.raw());
-               setUpRV();
-            }
+//    public void artistsAPI_Call(){
+//        retroInstance = new RetrofitInstance();
+//        retrofit = retroInstance.getRetrofit();
+//        retroService = retrofit.create(RetrofitService.class);
+//        Call<ArtistsList> getArtistsList = retroService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
+//        getArtistsList.enqueue(new Callback<ArtistsList>() {
+//            @Override
+//            public void onResponse(Call<ArtistsList> call, Response<ArtistsList> response) {
+//                artistsListHolder = response.body();
+//                artistsList = artistsListHolder.get_embedded().getArtists();
+//                //Loggers to check null references when traversing nested data Object
+//                Log.i(TAG, "onResponse: " + artistsListHolder);
+//                Log.i(TAG, "onRawResponse: " + response.raw());
+//               setUpRV();
+//            }
 
             @Override
             public void onFailure(Call<ArtistsList> call, Throwable t) {

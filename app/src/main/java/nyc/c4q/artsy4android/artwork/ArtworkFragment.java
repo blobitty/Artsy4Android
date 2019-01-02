@@ -12,10 +12,10 @@ import nyc.c4q.artsy4android.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Artwork_Fragment extends Fragment {
+public class ArtworkFragment extends Fragment {
 
 
-    public Artwork_Fragment() {
+    public ArtworkFragment() {
         // Required empty public constructor
     }
 

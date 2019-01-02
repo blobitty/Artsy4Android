@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.homesection;
+package nyc.c4q.artsy4android.homesection.foryou;
 
 
 import android.content.SharedPreferences;
@@ -18,30 +18,30 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.controller.FairsList_Adapter;
+import nyc.c4q.artsy4android.controller.FairsListAdapter;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
-import nyc.c4q.artsy4android.network.Retrofit_Instance;
-import nyc.c4q.artsy4android.network.Retrofit_Service;
+import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import static android.content.Context.MODE_PRIVATE;
-import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ForYou_Fragment extends Fragment {
+public class ForYouFragment extends Fragment {
     RecyclerView fairsRV;
     View rootView;
     List<Fairs> fairsList;
     FairsList fairsListHolder;
-    Retrofit_Instance retroInstance;
+    RetrofitInstance retroInstance;
     Retrofit retrofit;
-    Retrofit_Service retroService;
+    RetrofitService retroService;
     String xapptoken;
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
@@ -50,7 +50,7 @@ public class ForYou_Fragment extends Fragment {
     ImageView[] imageViewArray = new ImageView[4];
 
 
-    public ForYou_Fragment() {
+    public ForYouFragment() {
         // Required empty public constructor
     }
 
@@ -73,9 +73,9 @@ public class ForYou_Fragment extends Fragment {
     }
 
     public void fairsAPI_Call(){
-        retroInstance = new Retrofit_Instance();
+        retroInstance = new RetrofitInstance();
         retrofit = retroInstance.getRetrofit();
-        retroService = retrofit.create(Retrofit_Service.class);
+        retroService = retrofit.create(RetrofitService.class);
         Call<FairsList> getFairsList = retroService.getFairsList("current", "20", xapptoken);
         getFairsList.enqueue(new Callback<FairsList>() {
             @Override
@@ -99,7 +99,7 @@ public class ForYou_Fragment extends Fragment {
     }
 
     public void setUpRV(){
-        FairsList_Adapter fairsList_adapter = new FairsList_Adapter(fairsList);
+        FairsListAdapter fairsList_adapter = new FairsListAdapter(fairsList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         fairsRV.setAdapter(fairsList_adapter);
         fairsRV.setLayoutManager(linearLayoutManager);

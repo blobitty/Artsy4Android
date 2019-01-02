@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +21,13 @@ import nyc.c4q.artsy4android.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArtistPager_Fragment extends Fragment {
+public class ArtistPagerFragment extends Fragment {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    public ArtistPager_Fragment() {
+    public ArtistPagerFragment() {
         // Required empty public constructor
     }
 
@@ -57,8 +56,8 @@ public class ArtistPager_Fragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new About_Fragment(), "ABOUT");
-        adapter.addFragment(new Works_Fragment(), "WORKS");
+        adapter.addFragment(new AboutFragment(), "ABOUT");
+        adapter.addFragment(new WorksFragment(), "WORKS");
         adapter.addFragment(new ShowsFragment(), "SHOWS");
         viewPager.setAdapter(adapter);
     }

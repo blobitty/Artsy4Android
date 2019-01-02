@@ -5,19 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.artistpage.ArtistPager_Fragment;
-import nyc.c4q.artsy4android.models.Artist;
 
-public class ArtistPage_Activity extends AppCompatActivity {
+public class ArtistPageActivity extends AppCompatActivity {
 
     private static final String TAG = "HELP!!" ;
-    ArtistPager_Fragment artistPager_fragment = new ArtistPager_Fragment();
+    ArtistPagerFragment artistPager_fragment = new ArtistPagerFragment();
     FloatingActionButton backFAB;
     Button followFAB;
     TextView artistName, artistNationality, artistHometown;

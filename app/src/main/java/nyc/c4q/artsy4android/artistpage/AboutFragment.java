@@ -1,8 +1,6 @@
 package nyc.c4q.artsy4android.artistpage;
 
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,14 +11,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.controller.ArtistsList_Adapter;
 import nyc.c4q.artsy4android.models.Artist;
-import nyc.c4q.artsy4android.models.ArtistsList;
 import nyc.c4q.artsy4android.models.Artworks;
 import nyc.c4q.artsy4android.models.Constants;
-import nyc.c4q.artsy4android.models.Token;
-import nyc.c4q.artsy4android.network.Retrofit_Instance;
-import nyc.c4q.artsy4android.network.Retrofit_Service;
+import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,18 +27,18 @@ import static android.content.Context.MODE_PRIVATE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class About_Fragment extends Fragment {
+public class AboutFragment extends Fragment {
     String xappToken;
     SharedPreferences tokenSharedPrefs;
     Artist artist = new Artist();
     Artworks artworks = new Artworks();
     String artistID;
     TextView bioBody, stats;
-    private Retrofit_Instance retroInstance = new Retrofit_Instance();;
+    private RetrofitInstance retroInstance = new RetrofitInstance();;
     private Retrofit retrofit = retroInstance.getRetrofit();;
     View rootView;
 
-    public About_Fragment() {
+    public AboutFragment() {
         // Required empty public constructor
     }
 
@@ -67,7 +62,7 @@ public class About_Fragment extends Fragment {
 
     public void artistsAPI_Call(){
 
-        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
+        RetrofitService retroService = retrofit.create(RetrofitService.class);
 
         Call<Artist> getArtist = retroService.getArtist(artistID, xappToken);
         getArtist.enqueue(new Callback<Artist>() {
@@ -89,7 +84,7 @@ public class About_Fragment extends Fragment {
         });
     }
     public void artworksAPI_Call(String artistID){
-        Retrofit_Service retroService = retrofit.create(Retrofit_Service.class);
+        RetrofitService retroService = retrofit.create(RetrofitService.class);
         Call<Artworks> getArtworks = retroService.getArtworks(artistID, xappToken);
 
         getArtworks.enqueue(new Callback<Artworks>() {

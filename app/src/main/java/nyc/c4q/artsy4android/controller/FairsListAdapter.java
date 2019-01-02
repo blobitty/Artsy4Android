@@ -9,23 +9,23 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Fairs;
-import nyc.c4q.artsy4android.view.FairsList_ViewHolder;
+import nyc.c4q.artsy4android.viewholder.FairsListViewHolder;
 
-public class FairsList_Adapter extends RecyclerView.Adapter<FairsList_ViewHolder> {
+public class FairsListAdapter extends RecyclerView.Adapter<FairsListViewHolder> {
     List<Fairs> fairsList;
 
-    public FairsList_Adapter(List<Fairs> fairsList){
+    public FairsListAdapter(List<Fairs> fairsList){
         this.fairsList = fairsList;
     }
 
     @Override
-    public FairsList_ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FairsListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View viewChild = LayoutInflater.from(parent.getContext()).inflate(R.layout.fairs_item, parent, false);
-        return new FairsList_ViewHolder(viewChild);
+        return new FairsListViewHolder(viewChild);
     }
 
     @Override
-    public void onBindViewHolder(FairsList_ViewHolder holder, int position) {
+    public void onBindViewHolder(FairsListViewHolder holder, int position) {
         Fairs fairs = fairsList.get(position);
         holder.onBind(fairs);
     }

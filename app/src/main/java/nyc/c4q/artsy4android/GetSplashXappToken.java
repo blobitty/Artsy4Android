@@ -4,22 +4,22 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
-import nyc.c4q.artsy4android.network.Retrofit_Instance;
-import nyc.c4q.artsy4android.network.Retrofit_Service;
+import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
+import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 
-public class GetSplash_XappToken implements SplashCall {
+public class GetSplashXappToken implements SplashCall {
     private Token tokenData;
     private String xappToken;
 
     @Override
     public void getXappToken(String SHARED_PREFS_KEY, final SharedPreferences tokenSharedPrefs){
 
-        Retrofit_Service retroService = Retrofit_Instance.getRetrofit().create(Retrofit_Service.class);
+        RetrofitService retroService = RetrofitInstance.getRetrofit().create(RetrofitService.class);
         Call<Token> getTokenData = retroService.createToken(Constants.client_id, Constants.client_secret);
         getTokenData.enqueue(new Callback<Token>() {
             @Override

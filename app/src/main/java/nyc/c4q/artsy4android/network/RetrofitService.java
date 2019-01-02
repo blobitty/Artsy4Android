@@ -16,7 +16,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface Retrofit_Service {
+public interface RetrofitService {
 
 
         @POST("tokens/xapp_token")

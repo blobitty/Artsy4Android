@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 public class SplashActivity extends AppCompatActivity implements SplashCall {
 
-    GetSplash_XappToken splash_xappToken = new GetSplash_XappToken();
+    GetSplashXappToken splash_xappToken = new GetSplashXappToken();
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
     private SharedPreferences tokenSharedPrefs;
 

@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.view;
+package nyc.c4q.artsy4android.viewholder;
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -10,13 +10,13 @@ package nyc.c4q.artsy4android.view;
         import com.squareup.picasso.Picasso;
 
         import de.hdodenhof.circleimageview.CircleImageView;
-        import nyc.c4q.artsy4android.artistpage.ArtistPage_Activity;
+        import nyc.c4q.artsy4android.artistpage.ArtistPageActivity;
         import nyc.c4q.artsy4android.R;
         import nyc.c4q.artsy4android.models.Artist;
 
-        import static nyc.c4q.artsy4android.controller.ArtistsList_Adapter.TAG;
+        import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 
-public class Artist_ViewHolder extends RecyclerView.ViewHolder{
+public class ArtistViewHolder extends RecyclerView.ViewHolder{
     CircleImageView artistImage;
     TextView artistName, artistNationality, artistLifeSpan, artistHometown;
     String artistImage_URL, artistID;
@@ -27,7 +27,7 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
 
 
 
-    public Artist_ViewHolder(final View itemView) {
+    public ArtistViewHolder(final View itemView) {
         super(itemView);
         artistImage = itemView.findViewById(R.id.artist_profile_img);
         artistName = itemView.findViewById(R.id.artist_name);
@@ -43,7 +43,7 @@ public class Artist_ViewHolder extends RecyclerView.ViewHolder{
                 itemViewBundle.putString("ARTIST_NATIONALITY", artistNationality.getText().toString());
                 itemViewBundle.putString("ARTIST_HOMETOWN", artistHometown.getText().toString());
                 itemViewBundle.putString("ARTIST_ID", artistID);
-                Intent intent = new Intent(itemView.getContext(), ArtistPage_Activity.class);
+                Intent intent = new Intent(itemView.getContext(), ArtistPageActivity.class);
                 intent.putExtras(itemViewBundle);
                itemView.getContext().startActivity(intent);
             }

@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.homesection;
+package nyc.c4q.artsy4android.homesection.auctions;
 
 
 import android.os.Bundle;
