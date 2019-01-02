@@ -35,20 +35,20 @@ public class ArtistsFragment extends Fragment{
     View rootView;
     RecyclerView artistFragmentRV;
     List <Artist> artistsList;
-    ArtistsList artistsListHolder;
-    RetrofitInstance retroInstance;
-    Retrofit retrofit;
-    RetrofitService retroService;
+//    ArtistsList artistsListHolder;
+//    RetrofitInstance retroInstance;
+//    Retrofit retrofit;
+//    RetrofitService retroService;
     private SharedPreferences tokenSharedPrefs;
     String xappToken;
+    ArtistsFragementCall call = new ArtistsFragementCall();
+    Call<ArtistsList> listCall;
 
 
 
     public ArtistsFragment() {
         // Required empty public constructor
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -60,11 +60,11 @@ public class ArtistsFragment extends Fragment{
         tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
         xappToken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
         //artistsAPI_Call();
-
+        listCall = call.artistsAPI_Call(xappToken);
+        artistsList = call.artistsList;
+        setUpRV();
         return rootView;
     }
-
-
 
     public void setUpRV(){
         ArtistsListAdapter artist_adapter = new ArtistsListAdapter(artistsList);
@@ -73,28 +73,5 @@ public class ArtistsFragment extends Fragment{
         artistFragmentRV.setLayoutManager(linearLayoutManager);
     }
 
-//    public void artistsAPI_Call(){
-//        retroInstance = new RetrofitInstance();
-//        retrofit = retroInstance.getRetrofit();
-//        retroService = retrofit.create(RetrofitService.class);
-//        Call<ArtistsList> getArtistsList = retroService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
-//        getArtistsList.enqueue(new Callback<ArtistsList>() {
-//            @Override
-//            public void onResponse(Call<ArtistsList> call, Response<ArtistsList> response) {
-//                artistsListHolder = response.body();
-//                artistsList = artistsListHolder.get_embedded().getArtists();
-//                //Loggers to check null references when traversing nested data Object
-//                Log.i(TAG, "onResponse: " + artistsListHolder);
-//                Log.i(TAG, "onRawResponse: " + response.raw());
-//               setUpRV();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ArtistsList> call, Throwable t) {
-//                Log.d(TAG, "onFailure: " + t.toString());
-//                t.printStackTrace();
-//            }
-//        });
-//    }
 
 }

@@ -13,7 +13,6 @@ import nyc.c4q.artsy4android.R;
 
 public class ArtistPageActivity extends AppCompatActivity {
 
-    private static final String TAG = "HELP!!" ;
     ArtistPagerFragment artistPager_fragment = new ArtistPagerFragment();
     FloatingActionButton backFAB;
     Button followFAB;
