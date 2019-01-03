@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by bobbybah on 5/21/18.
  */
 
-public class RetrofitInstance {
+public class RetrofitClient {
     private static Retrofit retrofit;
     private static final String BASE_URL = "https://api.artsy.net/api/";
 

@@ -14,7 +14,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.Artworks;
 import nyc.c4q.artsy4android.models.Constants;
-import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,7 +34,7 @@ public class AboutFragment extends Fragment {
     Artworks artworks = new Artworks();
     String artistID;
     TextView bioBody, stats;
-    private RetrofitInstance retroInstance = new RetrofitInstance();;
+    private RetrofitClient retroInstance = new RetrofitClient();;
     private Retrofit retrofit = retroInstance.getRetrofit();;
     View rootView;
 

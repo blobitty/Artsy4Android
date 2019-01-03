@@ -18,12 +18,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.controller.ArtistsListAdapter;
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.network.RetrofitInstance;
-import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 import static android.content.Context.MODE_PRIVATE;
 import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
@@ -34,15 +29,8 @@ import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 public class ArtistsFragment extends Fragment{
     View rootView;
     RecyclerView artistFragmentRV;
-    List <Artist> artistsList;
-//    ArtistsList artistsListHolder;
-//    RetrofitInstance retroInstance;
-//    Retrofit retrofit;
-//    RetrofitService retroService;
-    private SharedPreferences tokenSharedPrefs;
-    String xappToken;
     ArtistsFragementCall call = new ArtistsFragementCall();
-    Call<ArtistsList> listCall;
+
 
 
 
@@ -57,16 +45,18 @@ public class ArtistsFragment extends Fragment{
         rootView = inflater.inflate(R.layout.fragment_artists_, container, false);
         artistFragmentRV = rootView.findViewById(R.id.artist_recyclerView);
         String SHARED_PREFS_KEY = "sharedPrefs";
-        tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
-        xappToken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
-        //artistsAPI_Call();
-        listCall = call.artistsAPI_Call(xappToken);
-        artistsList = call.artistsList;
-        setUpRV();
+        SharedPreferences tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
+        String xappToken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
+        call.artistsAPI_Call(xappToken);
+        List<Artist> artistsList = call.artistsList;
+        Log.i(TAG, "MAIN artistsList Size: " + artistsList.size());
+        //TODO: Create animation and method waiting for async method to return populated list
+        setUpRV(call.artistsList);
+
         return rootView;
     }
 
-    public void setUpRV(){
+    public void setUpRV(List <Artist> artistsList){
         ArtistsListAdapter artist_adapter = new ArtistsListAdapter(artistsList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         artistFragmentRV.setAdapter(artist_adapter);

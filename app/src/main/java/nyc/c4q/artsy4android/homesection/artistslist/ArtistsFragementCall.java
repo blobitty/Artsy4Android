@@ -3,11 +3,12 @@ package nyc.c4q.artsy4android.homesection.artistslist;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,31 +20,24 @@ import retrofit2.Retrofit;
 import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
 
 public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
-    List<Artist> artistsList;
-    ArtistsList artistsListHolder;
 
+    List<Artist> artistsList = new ArrayList<>();
     @Override
     public Call<ArtistsList> artistsAPI_Call(String xappToken) {
-        RetrofitService retrofitService;
-        //class for retrofit implementation
         //factory method for call with baseURL
-        Retrofit retrofit = RetrofitInstance.getRetrofit();
+        Retrofit retrofit = RetrofitClient.getRetrofit();
         //call service interface so that we can use interface methods
-        retrofitService = retrofit.create(RetrofitService.class);
-
+        RetrofitService retrofitService = retrofit.create(RetrofitService.class);
         Call<ArtistsList> getArtistsList = retrofitService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
         getArtistsList.enqueue(new Callback<ArtistsList>() {
             @Override
             public void onResponse(@NonNull Call<ArtistsList> call, @NonNull Response<ArtistsList> response) {
-                artistsListHolder = response.body();
+                ArtistsList artistsListHolder = response.body();
                 artistsList = artistsListHolder.get_embedded().getArtists();
                 //Loggers to check null references when traversing nested data Object
                 Log.i(TAG, "onResponse: " + artistsListHolder);
-                Log.i(TAG, "onRawResponse: " + response.raw());
-                //TODO:Change Implementation of how we set up the UI for onSuccess/onFailure
-                // setUpRV();
+                Log.i(TAG, "artistsList Size: " + artistsList.size());
             }
-
             @Override
             public void onFailure(@NonNull Call<ArtistsList> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: " + t.toString());

@@ -38,20 +38,12 @@ public class ArtistPageActivity extends AppCompatActivity {
         /**
          * set Texts for two buttons in Activity
          */
-        followFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                followFAB.setText(R.string.Following);
-                followFAB.setBackground(getResources().getDrawable(R.color.ic_black_background));
-            }
+        followFAB.setOnClickListener(v -> {
+            followFAB.setText(R.string.Following);
+            followFAB.setBackground(getResources().getDrawable(R.color.ic_black_background));
         });
 
-        backFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        backFAB.setOnClickListener(v -> finish());
 
         FragmentTransaction fTransaction = getSupportFragmentManager().beginTransaction();
         fTransaction.replace(R.id.artist_pageContainer, artistPager_fragment);

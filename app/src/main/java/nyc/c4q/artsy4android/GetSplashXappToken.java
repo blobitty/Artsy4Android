@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
-import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +19,7 @@ public class GetSplashXappToken implements SplashCall {
     @Override
     public void getXappToken(String SHARED_PREFS_KEY, final SharedPreferences tokenSharedPrefs){
 
-        RetrofitService retroService = RetrofitInstance.getRetrofit().create(RetrofitService.class);
+        RetrofitService retroService = RetrofitClient.getRetrofit().create(RetrofitService.class);
         Call<Token> getTokenData = retroService.createToken(Constants.client_id, Constants.client_secret);
         getTokenData.enqueue(new Callback<Token>() {
             @Override

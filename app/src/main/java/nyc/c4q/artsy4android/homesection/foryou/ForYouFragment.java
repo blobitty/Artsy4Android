@@ -21,7 +21,7 @@ import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.controller.FairsListAdapter;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
-import nyc.c4q.artsy4android.network.RetrofitInstance;
+import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +39,7 @@ public class ForYouFragment extends Fragment {
     View rootView;
     List<Fairs> fairsList;
     FairsList fairsListHolder;
-    RetrofitInstance retroInstance;
+    RetrofitClient retroInstance;
     Retrofit retrofit;
     RetrofitService retroService;
     String xapptoken;
@@ -73,7 +73,7 @@ public class ForYouFragment extends Fragment {
     }
 
     public void fairsAPI_Call(){
-        retroInstance = new RetrofitInstance();
+        retroInstance = new RetrofitClient();
         retrofit = retroInstance.getRetrofit();
         retroService = retrofit.create(RetrofitService.class);
         Call<FairsList> getFairsList = retroService.getFairsList("current", "20", xapptoken);
