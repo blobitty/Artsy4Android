@@ -21,4 +21,9 @@
     <string name="contact_galleries_or_bid_in_auctions_to_purchase_the_works">Contact galleries or bid in auctions to purchase the works</string>
     <string name="easily_process_payment_through_our_secure_platform">Easily process payment through our secure platform</string>
     <string name="follow">Follow</string>
+    <string name="recommended_works_for_you">Recommended works for you</string>
+    <string name="artists_to_follow">Artists to Follow:</string>
+    <string name="recommended_for_you">Recommended for You</string>
+    <string name="recommended_art_fairs">Recommended Art Fairs</string>
+    <string name="recently_viewed">Recently Viewed</string>
 </resources>

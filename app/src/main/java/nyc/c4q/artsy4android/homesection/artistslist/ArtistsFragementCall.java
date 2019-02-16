@@ -34,6 +34,7 @@ public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
             public void onResponse(@NonNull Call<ArtistsList> call, @NonNull Response<ArtistsList> response) {
                 ArtistsList artistsListHolder = response.body();
                 artistsList = artistsListHolder.get_embedded().getArtists();
+
                 //Loggers to check null references when traversing nested data Object
                 Log.i(TAG, "onResponse: " + artistsListHolder);
                 Log.i(TAG, "artistsList Size: " + artistsList.size());

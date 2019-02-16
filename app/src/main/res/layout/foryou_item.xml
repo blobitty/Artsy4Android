@@ -8,7 +8,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/artistToFollow_RV"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Recommended for You"
+            android:text="@string/recommended_for_you"
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/artistToFollow_TV" />
@@ -34,9 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Artists to Follow: "
+            android:text="@string/artists_to_follow"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recc_artworks_Grid" />
@@ -47,9 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
-            android:text="Recommended works for you"
+            android:text="@string/recommended_works_for_you"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV3" />
@@ -103,9 +103,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Recently Viewed"
+            android:text="@string/recently_viewed"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/artFair_recycler" />
@@ -116,9 +116,9 @@
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Recommended Art Fairs"
+        android:text="@string/recommended_art_fairs"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

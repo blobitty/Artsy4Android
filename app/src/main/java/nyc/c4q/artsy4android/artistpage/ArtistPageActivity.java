@@ -45,6 +45,7 @@ public class ArtistPageActivity extends AppCompatActivity {
 
         backFAB.setOnClickListener(v -> finish());
 
+        //FragmentTransaction fTransaction =  Frag   //getSupportFragmentManager().beginTransaction();
         FragmentTransaction fTransaction = getSupportFragmentManager().beginTransaction();
         fTransaction.replace(R.id.artist_pageContainer, artistPager_fragment);
         fTransaction.commit();
