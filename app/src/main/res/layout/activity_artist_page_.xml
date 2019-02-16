@@ -7,33 +7,38 @@
     tools:context=".artistpage.ArtistPageActivity">
 
 <!--TODO: add view pager for top tool bar with the three frags-->
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <FrameLayout
+        android:id="@+id/artist_frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/colorPrimaryDark"
-        app:itemTextColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/colorPrimaryDark"
+            app:itemTextColor="@color/colorPrimary"
+            app:menu="@menu/bottom_navigation_menu"
+            />
+
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/artist_pageContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintTop_toBottomOf="@id/follow_button"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintBottom_toTopOf="@id/artist_frameLayout"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
          />
