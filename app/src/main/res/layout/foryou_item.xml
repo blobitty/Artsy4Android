@@ -20,10 +20,10 @@
         <TextView
             android:id="@+id/recc_for_youTV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@string/recommended_for_you"
+            android:text="@string/popular_on_artsy"
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/artistToFollow_TV" />
@@ -31,44 +31,29 @@
         <TextView
             android:id="@+id/artistToFollow_TV"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
             android:text="@string/artists_to_follow"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recc_artworks_Grid" />
-
-        <TextView
-            android:id="@+id/recc_artworks_TV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/recommended_works_for_you"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV3" />
 
-        <GridView
-            android:id="@+id/recc_artworks_Grid"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recc_artworks_TV" />
 
         <ImageView
             android:id="@+id/recentlyViewed_IV4"
             android:layout_width="140dp"
             android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/recentlyViewed_IV3"
+            app:layout_constraintBottom_toTopOf="@+id/artistToFollow_TV"
             app:layout_constraintStart_toEndOf="@+id/recentlyViewed_IV3"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV2"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView
@@ -76,6 +61,9 @@
             android:layout_width="140dp"
             android:layout_height="200dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/artistToFollow_TV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV1"
             app:srcCompat="@mipmap/ic_launcher" />
@@ -84,6 +72,8 @@
             android:id="@+id/recentlyViewed_IV2"
             android:layout_width="140dp"
             android:layout_height="200dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toEndOf="@+id/recentlyViewed_IV1"
             app:layout_constraintTop_toBottomOf="@+id/recentlyviewed_TV"
             app:srcCompat="@mipmap/ic_launcher" />
@@ -93,6 +83,7 @@
             android:layout_width="140dp"
             android:layout_height="200dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recentlyviewed_TV"
             app:srcCompat="@mipmap/ic_launcher" />
