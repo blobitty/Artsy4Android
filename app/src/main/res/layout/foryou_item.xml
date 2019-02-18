@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="8dp"
             android:text="@string/artists_to_follow"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
@@ -45,9 +45,9 @@
         <ImageView
             android:id="@+id/recentlyViewed_IV4"
             android:layout_width="140dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="6dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/recentlyViewed_IV3"
             app:layout_constraintBottom_toTopOf="@+id/artistToFollow_TV"
@@ -59,34 +59,38 @@
         <ImageView
             android:id="@+id/recentlyViewed_IV3"
             android:layout_width="140dp"
-            android:layout_height="200dp"
+            android:layout_height="140dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/artistToFollow_TV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recentlyViewed_IV1"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@mipmap/ic_launcher"
+            android:contentDescription="@string/third_recentview" />
 
         <ImageView
             android:id="@+id/recentlyViewed_IV2"
             android:layout_width="140dp"
-            android:layout_height="200dp"
+            android:layout_height="140dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintStart_toEndOf="@+id/recentlyViewed_IV1"
             app:layout_constraintTop_toBottomOf="@+id/recentlyviewed_TV"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@mipmap/ic_launcher"
+            android:contentDescription="@string/second_recentview" />
 
         <ImageView
             android:id="@+id/recentlyViewed_IV1"
             android:layout_width="140dp"
-            android:layout_height="200dp"
+            android:layout_height="140dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/cardview_dark_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recentlyviewed_TV"
-            app:srcCompat="@mipmap/ic_launcher" />
+            app:srcCompat="@mipmap/ic_launcher"
+            android:contentDescription="@string/first_recentview" />
 
         <TextView
             android:id="@+id/recentlyviewed_TV"

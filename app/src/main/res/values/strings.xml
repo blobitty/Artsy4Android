@@ -27,4 +27,7 @@
     <string name="recommended_art_fairs">Recommended Art Fairs</string>
     <string name="recently_viewed">Recently Viewed</string>
     <string name="popular_on_artsy">Popular on Artsy</string>
+    <string name="first_recentview">first_recentView</string>
+    <string name="second_recentview">second recentView</string>
+    <string name="third_recentview">third recentView</string>
 </resources>

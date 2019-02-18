@@ -3,6 +3,7 @@ package nyc.c4q.artsy4android.homesection.foryou;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,7 +40,6 @@ public class ForYouFragment extends Fragment {
     View rootView;
     List<Fairs> fairsList;
     FairsList fairsListHolder;
-    RetrofitClient retroInstance;
     Retrofit retrofit;
     RetrofitService retroService;
     String xapptoken;
@@ -68,13 +68,19 @@ public class ForYouFragment extends Fragment {
         recentlyViewed_3 = rootView.findViewById(R.id.recentlyViewed_IV3);
         recentlyViewed_4 = rootView.findViewById(R.id.recentlyViewed_IV4);
         viewData_Collector();
-        recViewed_ImgLoader();
         return rootView;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recViewed_ImgLoader();
+
+    }
+
     public void fairsAPI_Call(){
-        retroInstance = new RetrofitClient();
-        retrofit = retroInstance.getRetrofit();
+        retrofit = RetrofitClient.getRetrofit();
         retroService = retrofit.create(RetrofitService.class);
         Call<FairsList> getFairsList = retroService.getFairsList("current", "20", xapptoken);
         getFairsList.enqueue(new Callback<FairsList>() {
@@ -98,6 +104,8 @@ public class ForYouFragment extends Fragment {
         });
     }
 
+
+
     public void setUpRV(){
         FairsListAdapter fairsList_adapter = new FairsListAdapter(fairsList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -105,19 +113,19 @@ public class ForYouFragment extends Fragment {
         fairsRV.setLayoutManager(linearLayoutManager);
     }
 
+
+
     public void recViewed_ImgLoader(){
 
         for (int i = 0; i < recentlyViewedURLS.length; i++){
-            Picasso.get()
+            Picasso
+                    .get()
                     .load(recentlyViewedURLS[i])
+                    //.resize(140, 200)
+                    .fit()
+                    .centerInside()
                     .into(imageViewArray[i]);
         }
-
-//        Picasso.get()
-//                .load(recentlyViewedURLS[0])
-//                .into(imageViewArray[0]);
-
-
     }
 
     public void viewData_Collector(){
