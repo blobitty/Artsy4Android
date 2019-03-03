@@ -21,7 +21,6 @@ public class RetrofitClient {
     private static Retrofit retrofit;
 
     public static Retrofit getRetrofit(String BASE_URL){
-
         if (retrofit == null) {
             //OKHttp Client
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

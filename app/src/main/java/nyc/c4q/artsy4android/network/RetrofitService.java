@@ -2,6 +2,7 @@ package nyc.c4q.artsy4android.network;
 
 import java.util.List;
 
+import io.reactivex.Single;
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
@@ -20,7 +21,7 @@ public interface RetrofitService {
 
 
         @POST("tokens/xapp_token")
-        Call<Token>createToken(@Query("client_id") String client_id, @Query("client_secret") String client_secret);
+        Single<Token> createToken(@Query("client_id") String client_id, @Query("client_secret") String client_secret);
 
         @GET("artists")
         Call<ArtistsList> getArtistsList(@Query("similarity_type") String similarity_type,
