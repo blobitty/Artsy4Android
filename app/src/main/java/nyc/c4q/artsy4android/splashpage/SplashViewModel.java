@@ -26,13 +26,15 @@ public class SplashViewModel extends ViewModel {
     }
 
     private Disposable loadToken() {
-      Disposable disposable = splashTokenRepo.createToken(Constants.client_id, Constants.client_secret)
-                .subscribe();
-        return disposable;
+        //creates a disposable single source that emits one item which should be a token
+        return splashTokenRepo.createToken(Constants.client_id, Constants.client_secret)
+                  .subscribe();
     }
 
     @Override
     public void onCleared(){
         loadToken().dispose();
     }
+
+
 }

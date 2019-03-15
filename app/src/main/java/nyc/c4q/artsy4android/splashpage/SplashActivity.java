@@ -1,28 +1,42 @@
 package nyc.c4q.artsy4android.splashpage;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import nyc.c4q.artsy4android.MainActivity;
+import nyc.c4q.artsy4android.models.Constants;
+import nyc.c4q.artsy4android.models.Token;
 
 public class SplashActivity extends AppCompatActivity {
 
-    //SplashTokenRepository splash_xappToken = new SplashTokenRepository();
-    private static final String SHARED_PREFS_KEY = "sharedPrefs";
+    ViewModel splashModel;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences tokenSharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
         //createToken(SHARED_PREFS_KEY, tokenSharedPrefs);
-
+        splashModel = ViewModelProviders.of(this).get(SplashViewModel.class);
+        ((SplashViewModel) splashModel).fetchToken().observe(this, token -> createToken(token));
     }
-    public void createToken(String SHARED_PREFS_KEY, SharedPreferences sharedPreferences) {
-          //splash_xappToken.createToken(SHARED_PREFS_KEY,sharedPreferences);
-          Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+
+    public void createToken(Token token) {
+        //TODO: Test This at Runtime
+        final String SHARED_PREFS_KEY = "sharedPrefs";
+        SharedPreferences tokenSharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
+        Log.d(Constants.TAG, "onResponse: XAPP= " + token.getToken());
+                SharedPreferences.Editor editor = tokenSharedPrefs.edit();
+                  editor.putString(Constants.TOKEN_KEY, token.getToken());
+                    editor.apply();
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
           startActivity(intent);
           finish();
     }
