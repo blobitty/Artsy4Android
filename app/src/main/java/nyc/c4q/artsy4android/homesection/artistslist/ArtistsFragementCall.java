@@ -8,6 +8,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Artist;
 import nyc.c4q.artsy4android.models.ArtistsList;
+import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
@@ -24,10 +25,9 @@ public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
     List<Artist> artistsList = new ArrayList<>();
     @Override
     public Call<ArtistsList> artistsAPI_Call(String xappToken) {
-        //factory method for call with baseURL
-        Retrofit retrofit = RetrofitClient.getRetrofit();
+
         //call service interface so that we can use interface methods
-        RetrofitService retrofitService = retrofit.create(RetrofitService.class);
+        RetrofitService retrofitService = RetrofitClient.getRetrofitClient(Constants.BASEURL).create(RetrofitService.class);
         Call<ArtistsList> getArtistsList = retrofitService.getArtistsList("contemporary", true, "-trending", 20, xappToken);
         getArtistsList.enqueue(new Callback<ArtistsList>() {
             @Override

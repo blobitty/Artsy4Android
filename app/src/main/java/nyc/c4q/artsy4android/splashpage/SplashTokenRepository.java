@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.SplashPage;
+package nyc.c4q.artsy4android.splashpage;
 
 import android.content.SharedPreferences;
 
@@ -10,12 +10,12 @@ import nyc.c4q.artsy4android.network.RetrofitService;
 class SplashTokenRepository {
     private RetrofitService retrofitService;
 
-
     SplashTokenRepository(RetrofitService retrofitService){
         retrofitService = this.retrofitService;
     }
-    Single<Token> createToken(String SHARED_PREFS_KEY, final SharedPreferences tokenSharedPrefs) {
-        return retrofitService.createToken(Constants.client_id, Constants.client_secret);
+
+    Single<Token> createToken(String client_id, String client_secret) {
+        return retrofitService.createToken(client_id, client_secret);
     }
 }
 

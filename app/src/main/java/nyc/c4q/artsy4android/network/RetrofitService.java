@@ -4,6 +4,7 @@ import java.util.List;
 
 import io.reactivex.Single;
 import nyc.c4q.artsy4android.models.Artist;
+import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
 import nyc.c4q.artsy4android.models.Search_Results;
@@ -39,14 +40,19 @@ public interface RetrofitService {
         @GET("fairs/{fair_id}")
         Call<Fairs> getFair(@Path("fair_id") String fair_id);
 
-
-
         @GET("search")
         Call<List<Search_Results>> getSearchResults(@Query("q") String q,
                                                     @Query("size") int size,
                                                     @Query("type") String type);
         @GET("artworks/{artist_id}")
         Call<Artworks> getArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
+
+        class ApiUtils{
+            public static RetrofitService retrofitService = RetrofitClient
+                    .getRetrofitClient(Constants.BASEURL)
+                    .create(RetrofitService.class);
+
+        }
 
 }
 

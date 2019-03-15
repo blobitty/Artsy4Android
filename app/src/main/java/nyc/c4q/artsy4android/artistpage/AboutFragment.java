@@ -34,8 +34,7 @@ public class AboutFragment extends Fragment {
     Artworks artworks = new Artworks();
     String artistID;
     TextView bioBody, stats;
-    private RetrofitClient retroInstance = new RetrofitClient();;
-    private Retrofit retrofit = retroInstance.getRetrofit();;
+    private Retrofit retrofit = RetrofitClient.getRetrofitClient(Constants.BASEURL);;
     View rootView;
 
     public AboutFragment() {

@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.SplashPage;
+package nyc.c4q.artsy4android.splashpage;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
