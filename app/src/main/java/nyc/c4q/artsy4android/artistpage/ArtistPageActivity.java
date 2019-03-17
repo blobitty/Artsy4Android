@@ -5,7 +5,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -35,9 +34,6 @@ public class ArtistPageActivity extends AppCompatActivity {
 
         setTexts(artist, nationality, hometown);
 
-        /**
-         * set Texts for two buttons in Activity
-         */
         followFAB.setOnClickListener(v -> {
             followFAB.setText(R.string.Following);
             followFAB.setBackground(getResources().getDrawable(R.color.ic_black_background));

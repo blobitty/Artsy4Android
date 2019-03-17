@@ -80,7 +80,7 @@ public class ForYouFragment extends Fragment {
     }
 
     public void fairsAPI_Call(){
-        retrofit = RetrofitClient.getRetrofitClient();
+        retrofit = RetrofitClient.getRetrofitClient(Constants.BASEURL);
         retroService = retrofit.create(RetrofitService.class);
         Call<FairsList> getFairsList = retroService.getFairsList("current", "20", xapptoken);
         getFairsList.enqueue(new Callback<FairsList>() {
