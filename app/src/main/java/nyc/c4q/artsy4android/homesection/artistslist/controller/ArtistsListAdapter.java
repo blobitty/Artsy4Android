@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.controller;
+package nyc.c4q.artsy4android.homesection.artistslist.controller;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Artist;
-import nyc.c4q.artsy4android.viewholder.ArtistViewHolder;
+import nyc.c4q.artsy4android.artistpage.viewholder.ArtistViewHolder;
 
 public class ArtistsListAdapter extends RecyclerView.Adapter<ArtistViewHolder> {
     List<Artist> artistsList;

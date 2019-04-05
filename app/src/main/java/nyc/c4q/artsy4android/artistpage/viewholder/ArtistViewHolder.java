@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.viewholder;
+package nyc.c4q.artsy4android.artistpage.viewholder;
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -14,7 +14,7 @@ package nyc.c4q.artsy4android.viewholder;
         import nyc.c4q.artsy4android.R;
         import nyc.c4q.artsy4android.models.Artist;
 
-        import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
+        import static nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsListAdapter.TAG;
 
 public class ArtistViewHolder extends RecyclerView.ViewHolder{
     CircleImageView artistImage;

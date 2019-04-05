@@ -14,11 +14,9 @@ import nyc.c4q.artsy4android.network.RetrofitService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 
-
-import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
+import static nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsListAdapter.TAG;
 
 public class ArtistsFragementCall implements ArtitstFragmentContract.Network {
 

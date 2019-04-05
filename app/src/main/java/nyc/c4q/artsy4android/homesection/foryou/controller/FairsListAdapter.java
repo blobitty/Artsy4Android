@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.controller;
+package nyc.c4q.artsy4android.homesection.foryou.controller;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Fairs;
-import nyc.c4q.artsy4android.viewholder.FairsListViewHolder;
+import nyc.c4q.artsy4android.homesection.foryou.viewholder.FairsListViewHolder;
 
 public class FairsListAdapter extends RecyclerView.Adapter<FairsListViewHolder> {
     List<Fairs> fairsList;

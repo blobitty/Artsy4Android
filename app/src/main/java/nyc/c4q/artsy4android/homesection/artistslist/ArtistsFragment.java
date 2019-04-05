@@ -15,13 +15,11 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.controller.ArtistsListAdapter;
+import nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsListAdapter;
 import nyc.c4q.artsy4android.models.Artist;
-import nyc.c4q.artsy4android.models.ArtistsList;
-import retrofit2.Call;
 
 import static android.content.Context.MODE_PRIVATE;
-import static nyc.c4q.artsy4android.controller.ArtistsListAdapter.TAG;
+import static nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsListAdapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
