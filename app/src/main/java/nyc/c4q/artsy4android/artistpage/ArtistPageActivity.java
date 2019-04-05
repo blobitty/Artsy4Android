@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import nyc.c4q.artsy4android.R;
 
 public class ArtistPageActivity extends AppCompatActivity {
@@ -28,9 +30,9 @@ public class ArtistPageActivity extends AppCompatActivity {
         backFAB = findViewById(R.id.exitArtistPage_FAB);
         followFAB = findViewById(R.id.follow_button);
         Intent intent = getIntent();
-        artist = intent.getExtras().get("ARTIST_NAME").toString();
-        nationality = intent.getExtras().get("ARTIST_NATIONALITY").toString();
-        hometown = intent.getExtras().get("ARTIST_HOMETOWN").toString();
+        artist = Objects.requireNonNull(intent.getExtras().get("ARTIST_NAME")).toString();
+        nationality = Objects.requireNonNull(intent.getExtras().get("ARTIST_NATIONALITY")).toString();
+        hometown = Objects.requireNonNull(intent.getExtras().get("ARTIST_HOMETOWN")).toString();
 
         setTexts(artist, nationality, hometown);
 
