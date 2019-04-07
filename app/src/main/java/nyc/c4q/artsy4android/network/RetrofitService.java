@@ -25,7 +25,7 @@ public interface RetrofitService {
         Single<Token> createToken(@Query("client_id") String client_id, @Query("client_secret") String client_secret);
 
         @GET("artists")
-        Call<ArtistsList> getArtistsList(@Query("similarity_type") String similarity_type,
+        Single<ArtistsList> getArtistsList(@Query("similarity_type") String similarity_type,
                                            @Query("artworks") boolean artworks,
                                            @Query("sort") String sort,
                                            @Query("size") int size,

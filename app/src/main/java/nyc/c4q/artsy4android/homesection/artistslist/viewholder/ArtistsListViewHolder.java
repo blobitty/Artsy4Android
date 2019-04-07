@@ -1,4 +1,4 @@
-package nyc.c4q.artsy4android.artistpage.viewholder;
+package nyc.c4q.artsy4android.homesection.artistslist.viewholder;
 
         import android.content.Intent;
         import android.os.Bundle;
@@ -16,37 +16,29 @@ package nyc.c4q.artsy4android.artistpage.viewholder;
 
         import static nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsListAdapter.TAG;
 
-public class ArtistViewHolder extends RecyclerView.ViewHolder{
-    CircleImageView artistImage;
-    TextView artistName, artistNationality, artistLifeSpan, artistHometown;
-    String artistImage_URL, artistID;
-    Artist artist = new Artist();
+public class ArtistsListViewHolder extends RecyclerView.ViewHolder{
+    private CircleImageView artistImage;
+    private TextView artistName, artistNationality, artistLifeSpan, artistHometown;
+    private String artistID;
 
 
-
-
-
-
-    public ArtistViewHolder(final View itemView) {
+    public ArtistsListViewHolder(final View itemView) {
         super(itemView);
         artistImage = itemView.findViewById(R.id.artist_profile_img);
         artistName = itemView.findViewById(R.id.artist_name);
         artistNationality = itemView.findViewById(R.id.artistNationality);
         artistLifeSpan = itemView.findViewById(R.id.life_spanTV);
         artistHometown = itemView.findViewById(R.id.hometownTV);
-        artistImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //send itemview data
-                Bundle itemViewBundle = new Bundle();
-                itemViewBundle.putString("ARTIST_NAME", artistName.getText().toString());
-                itemViewBundle.putString("ARTIST_NATIONALITY", artistNationality.getText().toString());
-                itemViewBundle.putString("ARTIST_HOMETOWN", artistHometown.getText().toString());
-                itemViewBundle.putString("ARTIST_ID", artistID);
-                Intent intent = new Intent(itemView.getContext(), ArtistPageActivity.class);
-                intent.putExtras(itemViewBundle);
-               itemView.getContext().startActivity(intent);
-            }
+        artistImage.setOnClickListener(v -> {
+            //send itemview data
+            Bundle itemViewBundle = new Bundle();
+            itemViewBundle.putString("ARTIST_NAME", artistName.getText().toString());
+            itemViewBundle.putString("ARTIST_NATIONALITY", artistNationality.getText().toString());
+            itemViewBundle.putString("ARTIST_HOMETOWN", artistHometown.getText().toString());
+            itemViewBundle.putString("ARTIST_ID", artistID);
+            Intent intent = new Intent(itemView.getContext(), ArtistPageActivity.class);
+            intent.putExtras(itemViewBundle);
+           itemView.getContext().startActivity(intent);
         });
 
     }
@@ -64,10 +56,10 @@ public class ArtistViewHolder extends RecyclerView.ViewHolder{
 
     }
 
-    public void setImages(Artist artist){
+    private void setImages(Artist artist){
         //load and set artist Image
         if(!artist.get_links().getThumbnail().getHref().isEmpty()){
-            artistImage_URL = artist.get_links().getThumbnail().getHref();
+            String artistImage_URL = artist.get_links().getThumbnail().getHref();
 
             Picasso.get()
                     .load(artistImage_URL)
@@ -75,9 +67,8 @@ public class ArtistViewHolder extends RecyclerView.ViewHolder{
             Log.d(TAG, "Thumbnail Image: " + artistImage_URL);
         }
     }
-    public String getArtistData(Artist artist){
-        String artistID = artist.getId();
-        return artistID;
+    private String getArtistData(Artist artist){
+        return artist.getId();
 
     }
 }

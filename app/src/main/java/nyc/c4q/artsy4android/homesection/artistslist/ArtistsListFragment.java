@@ -24,15 +24,15 @@ import static nyc.c4q.artsy4android.homesection.artistslist.controller.ArtistsLi
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArtistsFragment extends Fragment{
+public class ArtistsListFragment extends Fragment{
     View rootView;
     RecyclerView artistFragmentRV;
-    ArtistsFragementCall call = new ArtistsFragementCall();
+    ListRepository call = new ListRepository();
 
 
 
 
-    public ArtistsFragment() {
+    public ArtistsListFragment() {
         // Required empty public constructor
     }
 

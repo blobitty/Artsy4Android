@@ -9,9 +9,9 @@ import java.util.List;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Artist;
-import nyc.c4q.artsy4android.artistpage.viewholder.ArtistViewHolder;
+import nyc.c4q.artsy4android.homesection.artistslist.viewholder.ArtistsListViewHolder;
 
-public class ArtistsListAdapter extends RecyclerView.Adapter<ArtistViewHolder> {
+public class ArtistsListAdapter extends RecyclerView.Adapter<ArtistsListViewHolder> {
     List<Artist> artistsList;
     public static final String TAG = "HELP!";
 
@@ -20,14 +20,14 @@ public class ArtistsListAdapter extends RecyclerView.Adapter<ArtistViewHolder> {
     }
 
     @Override
-    public ArtistViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ArtistsListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View childView = LayoutInflater.from(parent.getContext()).inflate(R.layout.artistsfragment_item, parent, false);
 
-        return new ArtistViewHolder(childView);
+        return new ArtistsListViewHolder(childView);
     }
 
     @Override
-    public void onBindViewHolder(ArtistViewHolder holder, int position) {
+    public void onBindViewHolder(ArtistsListViewHolder holder, int position) {
         Artist artists = artistsList.get(position);
 
         holder.onBind(artists);
