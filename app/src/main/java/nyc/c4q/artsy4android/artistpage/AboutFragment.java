@@ -70,8 +70,8 @@ public class AboutFragment extends Fragment {
                 artist = response.body();
                 Log.i(TAG, "onResponse: " + artist);
                 Log.i(TAG, "onRawResponse: " + response.raw());
-                Log.i(TAG, "Bio Body " + artist.getBiography().toString());
-                bioBody.setText(artist.getBiography().toString());
+                Log.i(TAG, "Bio Body " + artist.getBiography());
+                bioBody.setText(artist.getBiography());
 
             }
 

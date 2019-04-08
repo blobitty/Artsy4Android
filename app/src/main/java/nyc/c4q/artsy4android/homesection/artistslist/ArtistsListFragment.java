@@ -47,8 +47,7 @@ public class ArtistsListFragment extends Fragment{
 
         //viewModel implementation
         ArtistsListViewModel artistsListVM = ViewModelProviders.of(this).get(ArtistsListViewModel.class);
-        artistsListVM.token = xappToken;
-        artistsListVM.fetchList(artistsListVM.token).observe(this, networkResult -> {
+        artistsListVM.fetchList(xappToken).observe(this, networkResult -> {
             List<Artist> artistsList = networkResult.get_embedded().getArtists();
             Log.i(TAG, "MAIN artistsList Size: " + artistsList.size());
 
