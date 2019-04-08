@@ -10,22 +10,22 @@ import nyc.c4q.artsy4android.models.ArtistsList;
 import nyc.c4q.artsy4android.network.RetrofitService;
 import static nyc.c4q.artsy4android.models.Constants.TOKEN_KEY;
 
-public class ArtsistListViewModel extends ViewModel {
-
+public class ArtistsListViewModel extends ViewModel {
+    String token;
     private ListRepository listRepository = new ListRepository(RetrofitService.ApiUtils.retrofitService);
     private MutableLiveData<ArtistsList> listData;
 
 
-    LiveData<ArtistsList> fetchList(){
+    LiveData<ArtistsList> fetchList(String token){
         if(listData == null){
          listData = new MutableLiveData<>();
-         getArtistList();
+         getArtistList(token);
         }
         return listData;
     }
 
-    private Disposable getArtistList() {
-        return listRepository.artistsAPI_Call(TOKEN_KEY)
+    private Disposable getArtistList(String token) {
+        return listRepository.artistsAPI_Call(token)
                 .map(artistsList -> artistsList.get_embedded().getArtists())
                 .subscribeOn(Schedulers.io())
                 .subscribe();
@@ -34,6 +34,6 @@ public class ArtsistListViewModel extends ViewModel {
 
     @Override
     public void onCleared(){
-        getArtistList().dispose();
+        getArtistList(token).dispose();
     }
 }

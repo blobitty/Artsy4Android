@@ -18,7 +18,7 @@ class ListRepository {
 
 
     Single<ArtistsList> artistsAPI_Call(String xappToken) {
-        //call service interface so that we can use interface methods
+        //listRepository service interface so that we can use interface methods
         return retrofitservice.getArtistsList("contemporary", true, "-trending", 20, xappToken);
     }
 }
