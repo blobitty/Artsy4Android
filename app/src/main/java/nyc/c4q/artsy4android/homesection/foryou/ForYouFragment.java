@@ -60,8 +60,8 @@ public class ForYouFragment extends Fragment {
         // Inflate the layout for this fragment
         tokenSharedPrefs = this.getActivity().getSharedPreferences(SHARED_PREFS_KEY,MODE_PRIVATE);
         xapptoken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
-        rootView = inflater.inflate(R.layout.foryou_item, container, false);
-        fairsRV = rootView.findViewById(R.id.artFair_recycler);
+        rootView = inflater.inflate(R.layout.fragment_foryou, container, false);
+        fairsRV = rootView.findViewById(R.id.artfair_recycler);
         fairsAPI_Call();
         recentlyViewed_1 = rootView.findViewById(R.id.recentlyViewed_IV1);
         recentlyViewed_2 = rootView.findViewById(R.id.recentlyViewed_IV2);
