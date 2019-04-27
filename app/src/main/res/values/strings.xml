@@ -31,4 +31,7 @@
     <string name="second_recentview">second recentView</string>
     <string name="third_recentview">third recentView</string>
     <string name="trending_artworks">Trending Artworks</string>
+    <string name="artwork_title">Artwork Title</string>
+    <string name="country_birth_year">Country, Birth Year</string>
+    <string name="artist_name">Artist Name</string>
 </resources>

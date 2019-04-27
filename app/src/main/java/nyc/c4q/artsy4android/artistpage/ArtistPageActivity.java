@@ -28,7 +28,7 @@ public class ArtistPageActivity extends AppCompatActivity {
         artistNationality = findViewById(R.id.artistpage_nationality);
         artistHometown = findViewById(R.id.artistpage_hometown);
         backFAB = findViewById(R.id.exitArtistPage_FAB);
-        followFAB = findViewById(R.id.follow_button);
+        followFAB = findViewById(R.id.follow_artist_button);
         Intent intent = getIntent();
         artist = Objects.requireNonNull(intent.getExtras().get("ARTIST_NAME")).toString();
         nationality = Objects.requireNonNull(intent.getExtras().get("ARTIST_NATIONALITY")).toString();
