@@ -34,4 +34,5 @@
     <string name="artwork_title">Artwork Title</string>
     <string name="country_birth_year">Country, Birth Year</string>
     <string name="artist_name">Artist Name</string>
+    <string name="favorite">Favorite</string>
 </resources>
