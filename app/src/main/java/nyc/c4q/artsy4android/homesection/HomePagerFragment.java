@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
-import nyc.c4q.artsy4android.homesection.artistslist.ArtistsFragment;
+import nyc.c4q.artsy4android.homesection.artistslist.ArtistsListFragment;
 import nyc.c4q.artsy4android.homesection.auctions.AuctionsFragment;
 import nyc.c4q.artsy4android.homesection.foryou.ForYouFragment;
 
@@ -59,7 +59,7 @@ public class HomePagerFragment extends Fragment {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
-        adapter.addFragment(new ArtistsFragment(), "ARTISTS");
+        adapter.addFragment(new ArtistsListFragment(), "ARTISTS");
         adapter.addFragment(new ForYouFragment(), "FOR YOU");
         adapter.addFragment(new AuctionsFragment(), "AUCTIONS");
         viewPager.setAdapter(adapter);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -37,7 +38,7 @@
         android:paddingStart="6dp"
         android:paddingEnd="6dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintTop_toBottomOf="@id/follow_button"
+        app:layout_constraintTop_toBottomOf="@id/follow_artist_button"
         app:layout_constraintBottom_toTopOf="@id/artist_frameLayout"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -73,14 +74,14 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/follow_button"
+        app:layout_constraintBottom_toTopOf="@+id/follow_artist_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artistpage_nationality"
         app:layout_constraintVertical_bias="0.971" />
 
     <Button
-        android:id="@+id/follow_button"
+        android:id="@+id/follow_artist_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/follow"

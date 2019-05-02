@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.homesection.HomePagerFragment;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         //set title logo
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_artsy_main_logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         //BottomNavigation icon color switch on state change
