@@ -39,15 +39,12 @@ public class ForYouFragment extends Fragment {
     RecyclerView fairsRV;
     View rootView;
     List<Fairs> fairsList;
-    FairsList fairsListHolder;
-    Retrofit retrofit;
-    RetrofitService retroService;
+
     String xapptoken;
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
-    String[] recentlyViewedURLS = new String[4];
-    ImageView recentlyViewed_1, recentlyViewed_2, recentlyViewed_3, recentlyViewed_4;
-    ImageView[] imageViewArray = new ImageView[4];
+
+
 
 
     public ForYouFragment() {
@@ -62,7 +59,6 @@ public class ForYouFragment extends Fragment {
         xapptoken = tokenSharedPrefs.getString(Constants.TOKEN_KEY, null);
         rootView = inflater.inflate(R.layout.fragment_foryou, container, false);
         fairsRV = rootView.findViewById(R.id.artfair_recycler);
-        fairsAPI_Call();
         return rootView;
     }
 
@@ -71,31 +67,13 @@ public class ForYouFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        fairsAPI_Call();
+
+
     }
 
     public void fairsAPI_Call(){
-        retrofit = RetrofitClient.getRetrofitClient(Constants.BASEURL);
-        retroService = retrofit.create(RetrofitService.class);
-        Call<FairsList> getFairsList = retroService.getFairsList("current", "20", xapptoken);
-        getFairsList.enqueue(new Callback<FairsList>() {
-            @Override
-            public void onResponse(Call<FairsList> call, Response<FairsList> response) {
-                fairsListHolder = response.body();
-                fairsList = fairsListHolder.get_embedded().getFairsList();
 
-                Log.i(TAG, "onResponseFairsListHolder: " + fairsListHolder);
-                Log.i(TAG, "onFairsRawResponse: " + response.raw());
-                Log.i(TAG, "onResponseFairsEmbedded: " + fairsListHolder.get_embedded().getFairsList());
-
-                setUpRV();
-            }
-
-            @Override
-            public void onFailure(Call<FairsList> call, Throwable t) {
-                Log.i(TAG, "onFailure: " + t.toString());
-                t.printStackTrace();
-            }
-        });
     }
 
     public void setUpRV(){
