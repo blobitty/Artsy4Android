@@ -2,7 +2,18 @@ package nyc.c4q.artsy4android.models;
 
 import java.util.List;
 
-public class Artworks {
+public class Artwork {
+
+    Embedded _embedded;
+
+    public Embedded get_embedded() {
+        return _embedded;
+    }
+
+
+    public class Embedded {
+
+
 
     String id;
     String slug;
@@ -159,5 +170,5 @@ public class Artworks {
     public Artwork_Dimensions getDimensions() {
         return dimensions;
     }
-
+    }
 }

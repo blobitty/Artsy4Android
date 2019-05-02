@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nyc.c4q.artsy4android.R;
+import nyc.c4q.artsy4android.artistpage.aboutartist.AboutFragment;
 
 /**
  * A simple {@link Fragment} subclass.

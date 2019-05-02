@@ -10,7 +10,7 @@ import nyc.c4q.artsy4android.models.FairsList;
 import nyc.c4q.artsy4android.models.Search_Results;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.models.Artworks;
+import nyc.c4q.artsy4android.models.Artwork;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -35,7 +35,7 @@ public interface RetrofitService {
         Call<Artist> getArtist(@Path("artist_id") String artist_id, @Header("X-Xapp-Token") String xappToken);
 
         @GET("fairs")
-        Call<FairsList> getFairsList(@Query("status") String status, @Query("size") String size,@Header("X-Xapp-Token") String xappToken);
+        Single<FairsList> getFairsList(@Query("status") String status, @Query("size") String size,@Header("X-Xapp-Token") String xappToken);
 
         @GET("fairs/{fair_id}")
         Call<Fairs> getFair(@Path("fair_id") String fair_id);
@@ -45,7 +45,10 @@ public interface RetrofitService {
                                                     @Query("size") int size,
                                                     @Query("type") String type);
         @GET("artworks/{artist_id}")
-        Call<Artworks> getArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
+        Call<Artwork> getArtistArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
+
+        @GET
+        Single<Artwork> getTrendingArtworks(@Query("size") String size);
 
         class ApiUtils{
             public static RetrofitService retrofitService = RetrofitClient

@@ -13,7 +13,6 @@ import nyc.c4q.artsy4android.MainActivity;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Token;
 
-import static nyc.c4q.artsy4android.splashpage.SplashViewModel.*;
 
 public class SplashActivity extends AppCompatActivity {
 

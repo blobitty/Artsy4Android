@@ -2,10 +2,8 @@ package nyc.c4q.artsy4android.homesection.artistslist;
 
 import io.reactivex.Single;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
 
-import static nyc.c4q.artsy4android.models.Constants.BASEURL;
 
 
 class ListRepository {

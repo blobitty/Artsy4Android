@@ -24,6 +24,9 @@ android {
     configurations {
         compile.exclude group: 'androidx.annotation', module: 'annotation'
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
