@@ -44,7 +44,9 @@ public class ForYouFragment extends Fragment {
     private SharedPreferences tokenSharedPrefs;
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
 
-
+    //TODO: Create RecyclerView for Trending Artworks
+    //TODO: Make APi call to Artworks endpoint
+    //TODO: Consider progress bars for UI
 
 
     public ForYouFragment() {
