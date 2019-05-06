@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import nyc.c4q.artsy4android.R;
 import nyc.c4q.artsy4android.models.Artist;
-import nyc.c4q.artsy4android.models.Artwork;
+import nyc.c4q.artsy4android.models.ArtworksList;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.network.RetrofitClient;
 import nyc.c4q.artsy4android.network.RetrofitService;
@@ -31,7 +31,7 @@ public class AboutFragment extends Fragment {
     String xappToken;
     SharedPreferences tokenSharedPrefs;
     Artist artist = new Artist();
-    Artwork artwork = new Artwork();
+    ArtworksList artworksList = new ArtworksList();
     String artistID;
     TextView bioBody, stats;
     private Retrofit retrofit = RetrofitClient.getRetrofitClient(Constants.BASEURL);;
@@ -82,18 +82,18 @@ public class AboutFragment extends Fragment {
     }
     public void artworksAPI_Call(String artistID){
         RetrofitService retroService = retrofit.create(RetrofitService.class);
-        Call<Artwork> getArtworks = retroService.getArtistArtworks(artistID, xappToken);
+        Call<ArtworksList> getArtworks = retroService.getArtistArtworks(artistID, xappToken);
 
-        getArtworks.enqueue(new Callback<Artwork>() {
+        getArtworks.enqueue(new Callback<ArtworksList>() {
             @Override
-            public void onResponse(Call<Artwork> call, Response<Artwork> response) {
-                artwork = response.body();
-                Log.i(TAG, "ARTWORKS onResponse: " + artwork);
+            public void onResponse(Call<ArtworksList> call, Response<ArtworksList> response) {
+                artworksList = response.body();
+                Log.i(TAG, "ARTWORKS onResponse: " + artworksList);
                 Log.i(TAG, "onResponse: " + response.raw());
             }
 
             @Override
-            public void onFailure(Call<Artwork> call, Throwable t) {
+            public void onFailure(Call<ArtworksList> call, Throwable t) {
                 t.printStackTrace();
             }
         });

@@ -4,13 +4,13 @@ import java.util.List;
 
 import io.reactivex.Single;
 import nyc.c4q.artsy4android.models.Artist;
+import nyc.c4q.artsy4android.models.ArtworksList;
 import nyc.c4q.artsy4android.models.Constants;
 import nyc.c4q.artsy4android.models.Fairs;
 import nyc.c4q.artsy4android.models.FairsList;
 import nyc.c4q.artsy4android.models.Search_Results;
 import nyc.c4q.artsy4android.models.Token;
 import nyc.c4q.artsy4android.models.ArtistsList;
-import nyc.c4q.artsy4android.models.Artwork;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -45,10 +45,10 @@ public interface RetrofitService {
                                                     @Query("size") int size,
                                                     @Query("type") String type);
         @GET("artworks/{artist_id}")
-        Call<Artwork> getArtistArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
+        Call<ArtworksList> getArtistArtworks(@Query("id") String id, @Header("X-Xapp-Token") String xappToken);
 
         @GET
-        Single<Artwork> getTrendingArtworks(@Query("size") String size);
+        Single<ArtworksList> getTrendingArtworks(@Query("size") String size);
 
         class ApiUtils{
             public static RetrofitService retrofitService = RetrofitClient

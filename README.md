@@ -7,7 +7,7 @@ with for sale and reference works by Andy Warhol, Claude Monet, Marina Abramovic
 ## Features
 
 - Browse the Artsy database for your favorite Artsists and Artworks 
-- Save your favorite artsists and artworks
+- Save your favorite artsists and artworksList
 - Find Art Fairs Around The World
 - Learn more about the world's most important artists
 ---

@@ -87,7 +87,7 @@ public class Artist {
         Img image;
         Self self;
         PermaLink permaLink;
-        Artwork artwork;
+        ArtworksList artworksList;
         PublishedArtworks published_artworks;
         SimilarArtists similar_artists;
         SimilarContemporaryArtists similar_contemporary_artists;
@@ -111,8 +111,8 @@ public class Artist {
             return published_artworks;
         }
 
-        public Artwork getArtwork() {
-            return artwork;
+        public ArtworksList getArtworksList() {
+            return artworksList;
         }
 
         public PermaLink getPermaLink() {

@@ -7,17 +7,17 @@ import android.arch.lifecycle.MutableLiveData;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import nyc.c4q.artsy4android.models.Artwork;
+import nyc.c4q.artsy4android.models.ArtworksList;
 import nyc.c4q.artsy4android.network.RetrofitService;
 
 
 public class ForYouViewModel {
 
     ForYouRepository repository = new ForYouRepository(RetrofitService.ApiUtils.retrofitService);
-    MutableLiveData<Artwork> listData;
+    MutableLiveData<ArtworksList> listData;
     String token;
 
-    LiveData<Artwork> loadArtwork(){
+    LiveData<ArtworksList> loadArtwork(){
         if (listData != null) return listData;
         else {
             getArtwork(token);
