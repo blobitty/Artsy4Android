@@ -36,8 +36,6 @@ public class TrendingArtworkViewHolder extends RecyclerView.ViewHolder {
         artworkTitle.setText(artwork.getTitle());
         //TODO: When Like Button is pressed change color.
 
-
-
     }
 
     public void setArtworkImage(Artwork artwork){
