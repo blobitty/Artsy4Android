@@ -15,5 +15,6 @@ public class RecentlyViewedViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(RecentlyViewed recentlyViewed){
 
+
     }
 }
