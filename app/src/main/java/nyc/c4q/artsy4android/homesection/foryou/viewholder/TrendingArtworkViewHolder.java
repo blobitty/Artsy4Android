@@ -21,7 +21,7 @@ public class TrendingArtworkViewHolder extends RecyclerView.ViewHolder {
     private TextView artworkTitle;
     private ImageButton likeButton;
 
-
+    //constructor
     public TrendingArtworkViewHolder(View itemView) {
         super(itemView);
 
@@ -34,7 +34,7 @@ public class TrendingArtworkViewHolder extends RecyclerView.ViewHolder {
 
         setArtworkImage(artwork);
         artworkTitle.setText(artwork.getTitle());
-        //TODO: When Like Button is pressed change color.
+        //TODO: When Like Button is pressed change color 5/10/19.
 
     }
 

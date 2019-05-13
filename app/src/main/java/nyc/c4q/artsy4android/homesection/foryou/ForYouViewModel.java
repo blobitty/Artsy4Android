@@ -2,7 +2,7 @@ package nyc.c4q.artsy4android.homesection.foryou;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-
+import android.arch.lifecycle.ViewModel;
 
 
 import io.reactivex.disposables.Disposable;
@@ -11,7 +11,7 @@ import nyc.c4q.artsy4android.models.ArtworksList;
 import nyc.c4q.artsy4android.network.RetrofitService;
 
 
-public class ForYouViewModel {
+public class ForYouViewModel extends ViewModel {
 
     ForYouRepository repository = new ForYouRepository(RetrofitService.ApiUtils.retrofitService);
     MutableLiveData<ArtworksList> listData;
@@ -31,4 +31,12 @@ public class ForYouViewModel {
                 .subscribe(data -> listData.postValue(data));
 
     }
+
+    @Override
+    public void onCleared(){
+        getArtwork(token).dispose();
+
+    }
+
+
 }

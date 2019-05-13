@@ -45,7 +45,7 @@ public class ForYouFragment extends Fragment {
     private static final String SHARED_PREFS_KEY = "sharedPrefs";
 
     //TODO: Create RecyclerView for Trending Artwork
-    //TODO: Make APi call to Artwork endpoint
+    //TODO: Make API call to Artwork endpoint
     //TODO: Consider progress bars for UI
 
 
@@ -69,12 +69,8 @@ public class ForYouFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        fairsAPI_Call();
 
 
-    }
-
-    public void fairsAPI_Call(){
 
     }
 

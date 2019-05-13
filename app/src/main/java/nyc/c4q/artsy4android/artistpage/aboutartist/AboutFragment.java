@@ -41,7 +41,7 @@ public class AboutFragment extends Fragment {
         // Required empty public constructor
     }
 
-    //TODO: 1) Create call for single artist via ID
+    //TODO: 1) Decouple code to MVVM architecture 5/13/19
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
