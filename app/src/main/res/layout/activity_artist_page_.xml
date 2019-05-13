@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".artistpage.ArtistPageActivity">
 
-<!--TODO: add view pager for top tool bar with the three frags-->
     <FrameLayout
         android:id="@+id/artist_frameLayout"
         android:layout_width="match_parent"
